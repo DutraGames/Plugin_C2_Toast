@@ -7,6 +7,7 @@ O plugin, faz aparecer Toasts, Alertas e pode-se usar para navegação de págin
 ## Plugin:
 
 **Condições do Plugin**
+
 ![image](https://user-images.githubusercontent.com/69097449/142955698-53e47626-ac2f-4e24-acdd-ac377ae1a8f0.png)
 
-- O `Ao dar OK em bonito` Tem como função a ideia de verificar o botão do OK do Alerta Bonito.
+- A condição `Ao dar OK em bonito` Tem como função de verificar o botão do OK do Alerta Bonito.
