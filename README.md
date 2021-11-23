@@ -2,13 +2,10 @@
 
 ## Descrição:
 
-<hr>
-
 O plugin, faz aparecer Toasts, Alertas e pode-se usar para navegação de páginas, atráves de da própria WEB ou pelos APPs nativos do usuário.
 
 ## Plugin:
 
-<hr>
 
 **Condições do Plugin:**
 
@@ -25,8 +22,6 @@ O plugin, faz aparecer Toasts, Alertas e pode-se usar para navegação de págin
 ![image](https://user-images.githubusercontent.com/69097449/142959675-d17c9a4b-30b5-4c44-8092-f1f735a7b8f3.png)
 
 ## Créditos:
-
-<hr>
 
 [Repositório Cute Alert](https://github.com/gustavosmanc/cute-alert)
 
