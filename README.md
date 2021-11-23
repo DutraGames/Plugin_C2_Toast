@@ -19,3 +19,8 @@ O plugin, faz aparecer Toasts, Alertas e pode-se usar para navegação de págin
 **Expressões do Plugin:**
 
 ![image](https://user-images.githubusercontent.com/69097449/142959675-d17c9a4b-30b5-4c44-8092-f1f735a7b8f3.png)
+
+## Créditos:
+
+[Repositório Cute Alert](https://github.com/gustavosmanc/cute-alert)
+
