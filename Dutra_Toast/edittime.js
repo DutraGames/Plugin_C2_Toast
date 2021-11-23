@@ -5,7 +5,7 @@ function GetPluginSettings() {
 		'version':		'0.1',
 		'description':	'Faz aparecer Toasts, Alertas e Apresentações do Browser',
 		'author':		'Gabriel Dutra',
-		'help url':		'https://github.com/DutraGames',
+		'help url':		'https://github.com/DutraGames/Plugin_C2_Toast',
 		'category':		'Diálogos e Notificações',
 		'type':			'object',
 		'flags':		pf_singleglobal,
