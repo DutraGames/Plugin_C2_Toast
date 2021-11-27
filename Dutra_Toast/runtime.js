@@ -111,7 +111,7 @@
 		alertfofo(ID,title, message, img, buttonText, typeindex) {
 			this.closeID = ID
 
-			const type = ['success', 'error', 'info', 'warning'][typeindex]
+			const type = ['success', 'error', 'info', 'warning', 'dark'][typeindex]
 			cuteAlert({ type, title, message, img, buttonText, closeStyle: "circle"})
 			.then(e => {
 				if (e === 'close'){
@@ -123,19 +123,33 @@
 			})
 		},
 		
-		alertper(ID,title, message, img, buttonText, typeindex) {
+		alertper(ID,title, message, img, buttonText, confirmText, cancelText, typeindex) {
 			this.closeID = ID
 
-			const type = ['success', 'error', 'info', 'warning'][typeindex]
-			cuteAlert({ type, title, message, img, buttonText, closeStyle: "circle"})
-			.then(e => {
-				if (e === 'close'){
-					this.runtime.trigger(Conditions.onCloseAlertPer, this)
-				}else{
-					this.runtime.trigger(Conditions.onDonePer, this)
-					
-				}
-			})
+			const type = ['success', 'error', 'info', 'warning', 'dark', 'question'][typeindex]
+			if(type !== 'question'){
+				cuteAlert({ type, title, message, img, buttonText, closeStyle: "circle"})
+				.then(e => {
+					if (e === 'close'){
+						this.runtime.trigger(Conditions.onCloseAlertPer, this)
+					}else{
+						this.runtime.trigger(Conditions.onDonePer, this)
+						
+					}
+				})
+			}else{
+				cuteAlert({ type, title, message, img, confirmText, cancelText, closeStyle: "circle"})
+				.then(e => {
+					if(e === 'confirm'){
+						this.runtime.trigger(Conditions.onConfirmPer, this)
+					}else if(e === 'close'){
+						this.runtime.trigger(Conditions.onCloseConfirmPer, this)
+					}
+					else{
+						this.runtime.trigger(Conditions.onCancelPer, this)
+					}
+				})
+			}
 		},
 		
 		alertconfirm(ID, title, message, img, confirmText, cancelText){
@@ -156,7 +170,7 @@
 		},
 
 		ToastSegunda(title, message, img, timer, typeindex) {
-			const type = ['success', 'error', 'info', 'warning'][typeindex]
+			const type = ['success', 'error', 'info', 'warning', 'dark'][typeindex]
 			cuteToast({ type, title, message, img, timer})
 		},
 
@@ -212,6 +226,18 @@
 		  onDonePer(ID){
 			if(this.closeID === ID) return true
 		  },
+
+		  onConfirmPer(ID){
+			if(this.confirmID === ID) return true
+		},
+
+		onCancelPer(ID){
+		  if(this.confirmID === ID) return true
+		},
+
+		onCloseConfirmPer(ID){
+		  if(this.closeID === ID) return true
+		},
 
 	}
 
