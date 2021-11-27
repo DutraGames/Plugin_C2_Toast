@@ -2,7 +2,7 @@ function GetPluginSettings() {
 	return {
 		'name':			'Toast',
 		'id':			'Dutra_Toast',
-		'version':		'0.1',
+		'version':		'0.1.1',
 		'description':	'Faz aparecer Toasts, Alertas e Apresentações do Browser',
 		'author':		'Gabriel Dutra',
 		'help url':		'https://github.com/DutraGames/Plugin_C2_Toast',
@@ -69,6 +69,7 @@ AddComboParamOption('Sucesso')
 AddComboParamOption('Erro')
 AddComboParamOption('Info')
 AddComboParamOption('Aviso')
+AddComboParamOption('Escuro')
 AddComboParam('Tipo', 'Tipo do alerta', 0)
 AddAction(14, af_none, 'Alerta Bonito', 'Notificações', 'Alerta Bonito do ID <b>{0}</b>', 'Esta ação mostrará um alerta mais bonito', 'alertfofo')
 
@@ -76,8 +77,10 @@ AddStringParam('ID', 'Escreva o ID.', '"1"')
 AddStringParam('Título', 'Escreva o Título.', '"Título"')
 AddStringParam('Mensagem', 'Escreva uma Mensagem.', '"Mensagem"')
 AddStringParam('Imagem', 'Escreva o nome da imagem.', '""')
-AddStringParam('Botão', 'Escreva o texto do botão.', '"OK"')
-AddNumberParam('Tipo', '0 = Sucesso  2 = Info \n 1 = Erro  3 = Aviso')
+AddStringParam('Botão OK', 'Escreva o texto do botão.', '"OK"')
+AddStringParam('Botão Confirmar', 'Escreva o texto do botão.', '"Confirmar"')
+AddStringParam('Botão Cancelar', 'Escreva o texto do botão.', '"Cancelar"')
+AddNumberParam('Tipo', '0 = Sucesso  1 = Erro  2 = Info  3 = Aviso  4 = Escuro  5 = Confirmação')
 AddAction(15, af_none, 'Alerta Personalizado', 'Notificações', 'Alerta Personalizado do ID <b>{0}</b>', 'Esta ação mostrará um alerta Personalizado', 'alertper')
 
 AddStringParam('ID', 'Escreva o ID.', '"1"')
@@ -96,6 +99,7 @@ AddComboParamOption('Sucesso')
 AddComboParamOption('Erro')
 AddComboParamOption('Info')
 AddComboParamOption('Aviso')
+AddComboParamOption('Escuro')
 AddComboParam('Tipo', 'Tipo da Notificação', 0)
 AddAction(17, af_none, 'Toast', 'Notificações', '<b>{2}</b>! Mensagem: <b>{1}</b>', 'Esta ação mostrará uma notificação Simples.', 'ToastSegunda')
 
@@ -138,6 +142,15 @@ AddCondition(6, cf_trigger, 'Ao Fechar Alerta Personalizado', 'Notificações', 
 
 AddStringParam('ID', 'Escreva o ID.', '"1"')
 AddCondition(7, cf_trigger, 'Ao  dar OK em Personalizado', 'Notificações', 'Ao Dar OK no ID <b>{0}</b>', 'Está condição verifica se se apertou o OK do Alerta Personalizado.', 'onDonePer')
+
+AddStringParam('ID', 'Escreva o ID.', '"1"')
+AddCondition(8, cf_trigger, 'Ao  Confirmar em Personalizado', 'Notificações', 'Ao Confirmar o  ID <b>{0}</b>', 'Está condição verifica se confirmou o Alerta Personalizado.', 'onConfirmPer')
+
+AddStringParam('ID', 'Escreva o ID.', '"1"')
+AddCondition(9, cf_trigger, 'Ao  Cancelar em Personalizado', 'Notificações', 'Ao Cancelar o  ID <b>{0}</b>', 'Está condição verifica se cancelou o Alerta Personalizado.', 'onCancelPer')
+
+AddStringParam('ID', 'Escreva o ID.', '"1"')
+AddCondition(10, cf_trigger, 'Ao Fechar Alerta Personalizado de Confirmação', 'Notificações', 'Ao Fechar o ID <b>{0}</b> do alerta personalizado de confirmação', 'Está condição verifica se se apertou o X do alerta personalizado de confirmação.', 'onCloseConfirmPer')
 
 
 
