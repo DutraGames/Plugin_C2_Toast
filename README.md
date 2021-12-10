@@ -21,10 +21,6 @@ O plugin, faz aparecer Toasts, Alertas e pode-se usar para navegação de págin
 
 ![image](https://user-images.githubusercontent.com/69097449/142959675-d17c9a4b-30b5-4c44-8092-f1f735a7b8f3.png)
 
-## Exemplos:
-
-- `Notificações Exemplo` : Esse capx serve para mostrar os tipos de Notificações presentes, até o momento no plugin.
-
 ## Créditos:
 
 [Repositório Cute Alert](https://github.com/gustavosmanc/cute-alert)
