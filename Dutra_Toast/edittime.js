@@ -55,7 +55,10 @@ AddAction(10, af_none, 'Servidor Discord', 'Social', 'Servidor <b>{0}</b>', 'Abr
 AddStringParam('ID', 'Escreva o ID de seu app.', '"8839749224794353014"')
 AddAction(11, af_none, 'Página Dev', 'Navegação', 'Desenvolvedor <b>{0}</b>', 'Abrirá a página de desenvolvedor na google play', 'devStore')
 
-AddStringParam('URL', 'Escreva a URL desejada.', '"https://google.com"')
+AddStringParam('URL', 'Escreva a URL desejada.', '""')
+AddComboParamOption('Nova Guia')
+AddComboParamOption('Página Atual')
+AddComboParam('Tipo', 'Tipo abertura da URL', 0)
 AddAction(12, af_none, 'URL', 'Navegação', 'URL <b>{0}</b>', 'Abrirá a página da URL informada', 'openURL')
 
 AddAction(13, af_none, 'Fechar', 'Device', 'Fechar Aplicação', 'Fechará a aplicação', 'closeApp')

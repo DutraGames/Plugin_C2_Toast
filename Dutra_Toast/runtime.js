@@ -100,8 +100,9 @@
 			location.assign(`https://play.google.com/store/apps/dev?id=${ID}`)
 		},
 
-		openURL(URL){
-			location.assign(URL)
+		openURL(URL, type){
+			const open = ['_blank', '_self'][type]
+			window.open(URL, open)
 		},
 
 		closeApp(){
@@ -128,7 +129,7 @@
 
 			const type = ['success', 'error', 'info', 'warning', 'dark', 'question'][typeindex]
 			if(type !== 'question'){
-				cuteAlert({ type, title, message, img, buttonText, closeStyle: "circle"})
+				cuteAlert({ type, title, message, img, buttonText, playSound, closeStyle: "circle"})
 				.then(e => {
 					if (e === 'close'){
 						this.runtime.trigger(Conditions.onCloseAlertPer, this)
