@@ -129,7 +129,7 @@
 
 			const type = ['success', 'error', 'info', 'warning', 'dark', 'question'][typeindex]
 			if(type !== 'question'){
-				cuteAlert({ type, title, message, img, buttonText, playSound, closeStyle: "circle"})
+				cuteAlert({ type, title, message, img, buttonText, closeStyle: "circle"})
 				.then(e => {
 					if (e === 'close'){
 						this.runtime.trigger(Conditions.onCloseAlertPer, this)
