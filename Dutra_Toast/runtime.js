@@ -56,48 +56,85 @@
 			alert(msg)
 		},
 
-		appStore(ID){
-			location.assign(`https://play.google.com/store/apps/details?id=${ID}`)
+		appStore(ID, type){
+
+			const open = ['_blank', '_self'][type]
+			window.open(`https://play.google.com/store/apps/details?id=${ID}`, open)
 		},
 
-		instaGo(name){
-			location.assign(`https://www.instagram.com/${name}`)
+		instaGo(name, type){
+
+			const open = ['_blank', '_self'][type]
+			window.open(`https://www.instagram.com/${name}`, open)
 		},
 
-		twitterGo(name){
-			location.assign(`https://twitter.com/${name}`)
-		},
+		twitterGo(name, type){
 
-		whatsGo(phone){
-			location.assign(`https://api.whatsapp.com/send?phone=${phone}`)
+			const open = ['_blank', '_self'][type]
+			window.open(`https://twitter.com/${name}`, open)
 		},
-
-		telegramGo(user){
-			location.assign(`https://t.me/${user}`)
+		twitterGo(name, type){
+			
+			const open = ['_blank', '_self'][type]
+			window.open(`https://twitter.com/${name}`, open)
 		},
-
-		githubGo(login){
-			location.assign(`https://github.com/${login}`)
+		twitterGo(name, type){
+			
+			const open = ['_blank', '_self'][type]
+			window.open(`https://twitter.com/${name}`, open)
 		},
-
-		faceGo(UserID){
-			location.assign(`https://www.facebook.com/${UserID}`)
+		twitterGo(name, type){
+			
+			const open = ['_blank', '_self'][type]
+			window.open(`https://twitter.com/${name}`, open)
 		},
+		
+		whatsGo(phone, type){
 
-		itchGo(user){
-			location.assign(`https://itch.io/profile/${user}`)
+			const open = ['_blank', '_self'][type]
+			window.open(`https://api.whatsapp.com/send?phone=${phone}`, open)
 		},
+		
+		telegramGo(user, type){
 
-		joltGo(user){
-			location.assign(`https://gamejolt.com/@${user}`)
+			const open = ['_blank', '_self'][type]
+			window.open(`https://t.me/${user}`, open)
 		},
-
-		discordGO(code){
-			location.assign(`https://discord.gg/invite/${code}`)
+		
+		githubGo(login, type){
+			
+			const open = ['_blank', '_self'][type]
+			window.open(`https://github.com/${login}`, open)
 		},
+		
+		faceGo(UserID, type){
+			
+			const open = ['_blank', '_self'][type]
+			window.open(`https://www.facebook.com/${UserID}`, open)
+		},
+		
+		itchGo(user, type){
 
-		devStore(ID){
-			location.assign(`https://play.google.com/store/apps/dev?id=${ID}`)
+			const open = ['_blank', '_self'][type]
+			window.open(`https://itch.io/profile/${user}`, open)
+		},
+		
+		joltGo(user, type){
+			
+			const open = ['_blank', '_self'][type]
+			window.open(`https://gamejolt.com/@${user}`, open)
+		},
+		
+		discordGO(code, type){
+			
+			const open = ['_blank', '_self'][type]
+			window.open(`https://discord.gg/invite/${code}`, open)
+		},
+		
+		devStore(ID, type){
+			
+			const open = ['_blank', '_self'][type]
+			window.open(`https://play.google.com/store/apps/dev?id=${ID}`, open)
 		},
 
 		openURL(URL, type){
@@ -126,7 +163,6 @@
 		
 		alertper(ID,title, message, img, buttonText, confirmText, cancelText, typeindex) {
 			this.closeID = ID
-
 			const type = ['success', 'error', 'info', 'warning', 'dark', 'question'][typeindex]
 			if(type !== 'question'){
 				cuteAlert({ type, title, message, img, buttonText, closeStyle: "circle"})

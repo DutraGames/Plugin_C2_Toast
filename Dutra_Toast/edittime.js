@@ -2,7 +2,7 @@ function GetPluginSettings() {
 	return {
 		'name':			'Toast',
 		'id':			'Dutra_Toast',
-		'version':		'0.1.1',
+		'version':		'0.1.2',
 		'description':	'Faz aparecer Toasts, Alertas e Apresentações do Browser',
 		'author':		'Gabriel Dutra',
 		'help url':		'https://github.com/DutraGames/Plugin_C2_Toast',
@@ -22,42 +22,75 @@ AddAnyTypeParam('Mensagem', 'Escreva alguma mensagem para alerta.', '""')
 AddAction(0, af_none, 'Alerta', 'Notificações', 'Alerta <b>{0}</b>', 'Esta ação chamará um alerta', 'alertmsg')
 
 AddStringParam('ID', 'Escreva o ID de seu app.', '""')
+AddComboParamOption('Nova Guia')
+AddComboParamOption('Nesta Guia')
+AddComboParam('Tipo', 'Tipo abertura da Página', 0)
 AddAction(1, af_none, 'Página APP', 'Navegação', 'App <b>{0}</b>', 'Abrirá a página de seu APP na google play', 'appStore')
 
 
 AddStringParam('@', 'Escreva o seu nome', '""')
+AddComboParamOption('Nova Guia')
+AddComboParamOption('Nesta Guia')
+AddComboParam('Tipo', 'Tipo abertura do Instagram', 0)
 AddAction(2, af_none, 'Perfil Instagram', 'Social', 'Instagram de <b>{0}</b>', 'Irá para a página de seu perfil do instagram', 'instaGo')
 
 AddStringParam('@', 'Escreva o seu nome', '""')
+AddComboParamOption('Nova Guia')
+AddComboParamOption('Nesta Guia')
+AddComboParam('Tipo', 'Tipo abertura do Twitter', 0)
 AddAction(3, af_none, 'Perfil Twitter', 'Social', 'Twitter de <b>{0}</b>', 'Irá para a página de seu perfil do Twitter', 'twitterGo')
 
 AddStringParam('Telefone', 'Escreva o seu telefone', '"+00XXYYYYYYYYY"')
+AddComboParamOption('Nova Guia')
+AddComboParamOption('Nesta Guia')
+AddComboParam('Tipo', 'Tipo abertura do Chat do WhatsApp', 0)
 AddAction(4, af_none, 'Chat WhatsApp', 'Social', 'Chat whatsApp com <b>{0}</b>', 'Irá iniciar automáticamente uma conversa com o número informado', 'whatsGo')
 
 AddStringParam('Nome de Usuário', 'Escreva o seu Nome de Usuário', '""')
+AddComboParamOption('Nova Guia')
+AddComboParamOption('Nesta Guia')
+AddComboParam('Tipo', 'Tipo abertura do Chat Telegram', 0)
 AddAction(5, af_none, 'Chat Telegram', 'Social', 'Chat Telegram com <b>{0}</b>', 'Irá para uma pa´gina para iniciar uma conversa com o usuário informado', 'telegramGo')
 
 AddStringParam('Login', 'Escreva o seu Login', '""')
+AddComboParamOption('Nova Guia')
+AddComboParamOption('Nesta Guia')
+AddComboParam('Tipo', 'Tipo abertura do Github', 0)
 AddAction(6, af_none, 'Perfil Github', 'Social', 'Github de <b>{0}</b>', 'Abrirá a página do perfil no github', 'githubGo')
 
 AddStringParam('UserID', 'Escreva o seu Usuário', '""')
+AddComboParamOption('Nova Guia')
+AddComboParamOption('Nesta Guia')
+AddComboParam('Tipo', 'Tipo abertura do Facebook', 0)
 AddAction(7, af_none, 'Perfil Facebook', 'Social', 'Facebook de <b>{0}</b>', 'Abrirá a página do perfil no Facebook', 'faceGo')
 
 AddStringParam('Usuário', 'Escreva o seu Usuário', '""')
+AddComboParamOption('Nova Guia')
+AddComboParamOption('Nesta Guia')
+AddComboParam('Tipo', 'Tipo abertura do Itch.io', 0)
 AddAction(8, af_none, 'Perfil itch.io', 'Social', 'itch.io de <b>{0}</b>', 'Abrirá a página do perfil no itch.io', 'itchGo')
 
 AddStringParam('@', 'Escreva o seu Usuário', '""')
+AddComboParamOption('Nova Guia')
+AddComboParamOption('Nesta Guia')
+AddComboParam('Tipo', 'Tipo abertura do Game Jolt', 0)
 AddAction(9, af_none, 'Perfil Game Jolt', 'Social', 'Game Jolt de <b>{0}</b>', 'Abrirá a página do perfil no Game Jolt', 'joltGo')
 
 AddStringParam('Código de Convite', 'Escreva o seu Código de Convite', '""')
+AddComboParamOption('Nova Guia')
+AddComboParamOption('Nesta Guia')
+AddComboParam('Tipo', 'Tipo abertura do Link de convite do Discord', 0)
 AddAction(10, af_none, 'Servidor Discord', 'Social', 'Servidor <b>{0}</b>', 'Abrirá a página de convite de servidor', 'discordGO')
 
-AddStringParam('ID', 'Escreva o ID de seu app.', '"8839749224794353014"')
+AddStringParam('ID', 'Escreva o ID de seu app.', '""')
+AddComboParamOption('Nova Guia')
+AddComboParamOption('Nesta Guia')
+AddComboParam('Tipo', 'Tipo abertura da Página de desenvolvedor Play Store', 0)
 AddAction(11, af_none, 'Página Dev', 'Navegação', 'Desenvolvedor <b>{0}</b>', 'Abrirá a página de desenvolvedor na google play', 'devStore')
 
 AddStringParam('URL', 'Escreva a URL desejada.', '""')
 AddComboParamOption('Nova Guia')
-AddComboParamOption('Página Atual')
+AddComboParamOption('Nesta Guia')
 AddComboParam('Tipo', 'Tipo abertura da URL', 0)
 AddAction(12, af_none, 'URL', 'Navegação', 'URL <b>{0}</b>', 'Abrirá a página da URL informada', 'openURL')
 
