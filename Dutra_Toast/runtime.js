@@ -57,82 +57,69 @@
 		},
 
 		appStore(ID, type){
-
 			const open = ['_blank', '_self'][type]
 			window.open(`https://play.google.com/store/apps/details?id=${ID}`, open)
 		},
 
 		instaGo(name, type){
-
 			const open = ['_blank', '_self'][type]
 			window.open(`https://www.instagram.com/${name}`, open)
 		},
 
 		twitterGo(name, type){
+			const open = ['_blank', '_self'][type]
+			window.open(`https://twitter.com/${name}`, open)
+		},
+		twitterGo(name, type){
+			const open = ['_blank', '_self'][type]
+			window.open(`https://twitter.com/${name}`, open)
+		},
+		twitterGo(name, type){
+			const open = ['_blank', '_self'][type]
+			window.open(`https://twitter.com/${name}`, open)
+		},
 
-			const open = ['_blank', '_self'][type]
-			window.open(`https://twitter.com/${name}`, open)
-		},
-		twitterGo(name, type){
-			
-			const open = ['_blank', '_self'][type]
-			window.open(`https://twitter.com/${name}`, open)
-		},
-		twitterGo(name, type){
-			
-			const open = ['_blank', '_self'][type]
-			window.open(`https://twitter.com/${name}`, open)
-		},
-		twitterGo(name, type){
-			
+		twitterGo(name, type){	
 			const open = ['_blank', '_self'][type]
 			window.open(`https://twitter.com/${name}`, open)
 		},
 		
 		whatsGo(phone, type){
-
 			const open = ['_blank', '_self'][type]
 			window.open(`https://api.whatsapp.com/send?phone=${phone}`, open)
 		},
 		
 		telegramGo(user, type){
-
 			const open = ['_blank', '_self'][type]
 			window.open(`https://t.me/${user}`, open)
 		},
 		
 		githubGo(login, type){
-			
 			const open = ['_blank', '_self'][type]
 			window.open(`https://github.com/${login}`, open)
 		},
 		
 		faceGo(UserID, type){
-			
 			const open = ['_blank', '_self'][type]
 			window.open(`https://www.facebook.com/${UserID}`, open)
 		},
 		
 		itchGo(user, type){
-
 			const open = ['_blank', '_self'][type]
 			window.open(`https://itch.io/profile/${user}`, open)
 		},
 		
 		joltGo(user, type){
-			
 			const open = ['_blank', '_self'][type]
 			window.open(`https://gamejolt.com/@${user}`, open)
 		},
 		
 		discordGO(code, type){
-			
 			const open = ['_blank', '_self'][type]
 			window.open(`https://discord.gg/invite/${code}`, open)
 		},
 		
 		devStore(ID, type){
-			
 			const open = ['_blank', '_self'][type]
 			window.open(`https://play.google.com/store/apps/dev?id=${ID}`, open)
 		},
@@ -148,7 +135,6 @@
 
 		alertfofo(ID,title, message, img, buttonText, typeindex) {
 			this.closeID = ID
-
 			const type = ['success', 'error', 'info', 'warning', 'dark'][typeindex]
 			cuteAlert({ type, title, message, img, buttonText, closeStyle: "circle"})
 			.then(e => {
@@ -156,7 +142,6 @@
 					this.runtime.trigger(Conditions.onCloseAlert, this)
 				}else{
 					this.runtime.trigger(Conditions.onDone, this)
-					
 				}
 			})
 		},
@@ -171,7 +156,6 @@
 						this.runtime.trigger(Conditions.onCloseAlertPer, this)
 					}else{
 						this.runtime.trigger(Conditions.onDonePer, this)
-						
 					}
 				})
 			}else{
@@ -192,7 +176,6 @@
 		alertconfirm(ID, title, message, img, confirmText, cancelText){
 			this.confirmID = ID
 			this.closeID = ID
-
 			cuteAlert({ type: 'question', title, message, img, confirmText,  cancelText, closeStyle: "circle"})
 			.then(e => {
 				if(e === 'confirm'){
@@ -216,17 +199,24 @@
 		},
 
 		ShareWhats(msg){
-			location.assign(`https://web.whatsapp.com/send?text=${msg}`)
+			window.open(`https://api.whatsapp.com/send?text=${msg}`, '_blank')
 		},
-
+		
 		ShareFace(msg){
-			location.assign(`https://www.facebook.com/sharer/sharer.php?u=${msg}`)
+			window.open(`https://www.facebook.com/sharer/sharer.php?u=${msg}`, '_blank')
 		},
-
+		
 		ShareTelegram(msg, url){
-			location.assign(`https://telegram.me/share/url?url=${url}&text=${msg}`)
+			window.open(`https://telegram.me/share/url?url=${url}&text=${msg}`, '_blank')
+		},
+		
+		ShareTwitter(msg, url){
+			window.open(`https://twitter.com/intent/tweet?url=${url}&text=${msg}`, '_blank')
 		},
 
+		SharePinter(msg, url, img){
+			window.open(`https://pinterest.com/pin/create/button/?url=${url}&media=${img}&description=${msg}`, '_blank')
+		},
 	}
 
 	//////////////////////////////////////

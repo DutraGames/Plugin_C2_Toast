@@ -152,6 +152,15 @@ AddAnyTypeParam('Mensagem', 'Escreva a Mensagem que deseja enviar', '""')
 AddAnyTypeParam('URL', 'Escreva a URL que deseja enviar', '""')
 AddAction(21, af_none, 'Telegram', 'Compartilhamento', 'Compartilhar <b>{0}</b>', 'Compartilhará pelo Telegram', 'ShareTelegram')
 
+AddAnyTypeParam('Mensagem', 'Escreva a Mensagem que deseja enviar', '""')
+AddAnyTypeParam('URL', 'Escreva a URL que deseja enviar', '""')
+AddAction(22, af_none, 'Twitter', 'Compartilhamento', 'Compartilhar <b>{0}</b>', 'Compartilhará pelo Twitter', 'ShareTwitter')
+
+AddAnyTypeParam('Mensagem', 'Escreva a Mensagem que deseja enviar', '""')
+AddAnyTypeParam('URL', 'Escreva a URL que deseja enviar', '""')
+AddAnyTypeParam('Imagem', 'Escreva a URL da imagem', '""')
+AddAction(23, af_none, 'Pinterest', 'Compartilhamento', 'Compartilhar <b>{0}</b>', 'Compartilhará pelo Pinterest', 'SharePinter')
+
 
 ////////////////////////////////////////
 // Conditions
