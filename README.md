@@ -21,6 +21,10 @@ O plugin, faz aparecer Toasts, Alertas e pode-se usar para navegação de págin
 
 ![image](https://user-images.githubusercontent.com/69097449/142959675-d17c9a4b-30b5-4c44-8092-f1f735a7b8f3.png)
 
+
+## Ps.:
+
+O Plugin sofre alterações diárias, mas nem todas subo de imediato, se tiverem sugestões ou algum erro, favor me dizer em [Issues](https://github.com/DutraGames/Plugin_C2_Toast/issues). Caso deseje desenvolver uma função adicional ao plugin ou melhorias, faça um [Pull Request](https://github.com/DutraGames/Plugin_C2_Toast/pulls), sendo útil, aceitarei de bom grado.
 ## Créditos:
 
 [Repositório Cute Alert](https://github.com/gustavosmanc/cute-alert)
