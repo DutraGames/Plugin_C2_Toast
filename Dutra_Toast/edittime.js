@@ -2,7 +2,7 @@ function GetPluginSettings() {
 	return {
 		'name':			'Toast',
 		'id':			'Dutra_Toast',
-		'version':		'0.1.2',
+		'version':		'0.1.3',
 		'description':	'Faz aparecer Toasts, Alertas e Apresentações do Browser',
 		'author':		'Gabriel Dutra',
 		'help url':		'https://github.com/DutraGames/Plugin_C2_Toast',
@@ -107,6 +107,14 @@ AddComboParamOption('Info')
 AddComboParamOption('Aviso')
 AddComboParamOption('Escuro')
 AddComboParam('Tipo', 'Tipo do alerta', 0)
+AddComboParamOption('Normal')
+AddComboParamOption('Circular')
+AddComboParamOption('Vázio')
+AddComboParam('X', 'Tipo do X', 0)
+AddComboParamOption('Com Fundo')
+AddComboParamOption('Sem Fundo')
+AddComboParamOption('Sem Header')
+AddComboParam('Header', 'Tipo do Header', 0)
 AddAction(14, af_none, 'Alerta Bonito', 'Notificações', 'Alerta Bonito do ID <b>{0}</b>', 'Esta ação mostrará um alerta mais bonito', 'alertfofo')
 
 AddStringParam('ID', 'Escreva o ID.', '"1"')
@@ -117,6 +125,8 @@ AddStringParam('Botão OK', 'Escreva o texto do botão.', '"OK"')
 AddStringParam('Botão Confirmar', 'Escreva o texto do botão.', '"Confirmar"')
 AddStringParam('Botão Cancelar', 'Escreva o texto do botão.', '"Cancelar"')
 AddNumberParam('Tipo', '0 = Sucesso  1 = Erro  2 = Info  3 = Aviso  4 = Escuro  5 = Confirmação')
+AddNumberParam('X', '0 = Normal  1 = Circular  2 = Vázio')
+AddNumberParam('Header', '0 = Com Fundo  1 = Sem Fundo  2 = Sem Header')
 AddAction(15, af_none, 'Alerta Personalizado', 'Notificações', 'Alerta Personalizado do ID <b>{0}</b>', 'Esta ação mostrará um alerta Personalizado', 'alertper')
 
 AddStringParam('ID', 'Escreva o ID.', '"1"')
@@ -125,6 +135,14 @@ AddStringParam('Mensagem', 'Escreva uma Mensagem.', '"Mensagem"')
 AddStringParam('Imagem', 'Escreva o nome da imagem.', '""')
 AddStringParam('Botão Confirmar', 'Escreva o texto do botão.', '"Confirmar"')
 AddStringParam('Botão Cancelar', 'Escreva o texto do botão.', '"Cancelar"')
+AddComboParamOption('Normal')
+AddComboParamOption('Circular')
+AddComboParamOption('Vázio')
+AddComboParam('X', 'Tipo do X', 0)
+AddComboParamOption('Com Fundo')
+AddComboParamOption('Sem Fundo')
+AddComboParamOption('Sem Header')
+AddComboParam('Header', 'Tipo do Header', 0)
 AddAction(16, af_none, 'Alerta de Confirmação', 'Notificações', 'Alerta de Confirmação de ID: <b>{0}</b>', 'Esta ação mostrará um alerta de confirmação', 'alertconfirm')
 
 AddStringParam('Título', 'Escreva o Título.', '"Título"')

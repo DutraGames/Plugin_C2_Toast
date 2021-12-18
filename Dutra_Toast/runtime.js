@@ -133,10 +133,12 @@
 			close()
 		},
 
-		alertfofo(ID,title, message, img, buttonText, typeindex) {
+		alertfofo(ID,title, message, img, buttonText, typeindex, closeindex, headerindex) {
 			this.closeID = ID
 			const type = ['success', 'error', 'info', 'warning', 'dark'][typeindex]
-			cuteAlert({ type, title, message, img, buttonText, closeStyle: "circle"})
+			const closeStyle = ['default', 'circle', ''][closeindex]
+			const header = ['default', '', 'hidden'][headerindex]
+			cuteAlert({ type, title, message, img, buttonText, closeStyle, header})
 			.then(e => {
 				if (e === 'close'){
 					this.runtime.trigger(Conditions.onCloseAlert, this)
@@ -146,11 +148,13 @@
 			})
 		},
 		
-		alertper(ID,title, message, img, buttonText, confirmText, cancelText, typeindex) {
+		alertper(ID,title, message, img, buttonText, confirmText, cancelText, typeindex, closeindex, headerindex) {
 			this.closeID = ID
+			const closeStyle = ['default', 'circle', ''][closeindex]
+			const header = ['default', '', 'hidden'][headerindex]
 			const type = ['success', 'error', 'info', 'warning', 'dark', 'question'][typeindex]
 			if(type !== 'question'){
-				cuteAlert({ type, title, message, img, buttonText, closeStyle: "circle"})
+				cuteAlert({ type, title, message, img, buttonText, closeStyle, header})
 				.then(e => {
 					if (e === 'close'){
 						this.runtime.trigger(Conditions.onCloseAlertPer, this)
@@ -159,7 +163,7 @@
 					}
 				})
 			}else{
-				cuteAlert({ type, title, message, img, confirmText, cancelText, closeStyle: "circle"})
+				cuteAlert({ type, title, message, img, confirmText, cancelText, closeStyle, header})
 				.then(e => {
 					if(e === 'confirm'){
 						this.runtime.trigger(Conditions.onConfirmPer, this)
@@ -173,10 +177,12 @@
 			}
 		},
 		
-		alertconfirm(ID, title, message, img, confirmText, cancelText){
+		alertconfirm(ID, title, message, img, confirmText, cancelText, closeindex, headerindex){
 			this.confirmID = ID
 			this.closeID = ID
-			cuteAlert({ type: 'question', title, message, img, confirmText,  cancelText, closeStyle: "circle"})
+			const closeStyle = ['default', 'circle', ''][closeindex]
+			const header = ['default', '', 'hidden'][headerindex]
+			cuteAlert({ type: 'question', title, message, img, confirmText, cancelText, closeStyle, header})
 			.then(e => {
 				if(e === 'confirm'){
 					this.runtime.trigger(Conditions.onConfirm, this)
