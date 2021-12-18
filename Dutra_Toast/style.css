@@ -37,14 +37,14 @@
 
 .alert-frame {
   background: #fff;
-  min-height: 400px;
+  min-height: 100px;
   width: 300px;
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
   border-radius: 10px;
   animation: open-frame 0.3s linear;
 }
 
-.alert-header {
+.alert-header-default {
   display: flex;
   flex-direction: row;
   height: 175px;
@@ -52,8 +52,13 @@
   border-top-right-radius: 5px;
 }
 
+.alert-header-hidden {
+  display: none;
+}
+
 .alert-img {
-  height: 80px;
+  max-height: 150px;
+  max-width: 250px;
   position: absolute;
   left: 0;
   right: 0;
@@ -72,6 +77,10 @@
   font-weight: 700;
   cursor: pointer;
   line-height: 30px;
+}
+
+.alert-close-hidden{
+  display: none;
 }
 
 .alert-close-default {
@@ -334,7 +343,7 @@
 }
 
 .dark-bg {
-  background: #010;
+  background: #000;
 }
 
 .warning-bg {
@@ -354,7 +363,7 @@
 }
 
 .dark-btn:hover {
-  background: #020;
+  background: #222;
 }
 
 .warning-btn:hover {
@@ -378,7 +387,7 @@
 }
 
 .dark-timer {
-  background: #010;
+  background: #000;
 }
 
 .warning-timer {
