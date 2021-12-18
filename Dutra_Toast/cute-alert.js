@@ -4,11 +4,12 @@ const cuteAlert = ({
   type,
   title,
   message,
-  img,
+  img = '',
   buttonText = 'OK',
   confirmText = 'OK',
   cancelText = 'Cancel',
-  closeStyle,
+  closeStyle = 'default',
+  header = 'default',
 }) => {
   return new Promise(resolve => {
     const existingAlert = document.querySelector('.alert-wrapper');
@@ -45,12 +46,9 @@ const cuteAlert = ({
     const template = `
     <div class="alert-wrapper">
       <div class="alert-frame">
-        ${img !== '' ? '<div class="alert-header ' + type + '-bg">' : '<div>'}
+        ${header !== '' ? '<div class="alert-header-'+ header + ' ' + type + '-bg">' : '<div class="alert-header-default">'}
           <span class="alert-close ${
-            closeStyle === 'circle'
-              ? 'alert-close-circle'
-              : 'alert-close-default'
-          }">X</span>
+            closeStyle !== '' ? 'alert-close-'+closeStyle : 'alert-close-hidden'}">X</span>
           ${img !== '' ? '<img class="alert-img" src="' + src + '/' + img + '" />' : ''}
         </div>
         <div class="alert-body">
