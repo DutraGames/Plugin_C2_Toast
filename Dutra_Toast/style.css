@@ -369,6 +369,10 @@
   background: #2dd284;
 }
 
+.input-bg {
+  background: #2dd284;
+}
+
 .dark-bg {
   background: #000;
 }
@@ -386,6 +390,10 @@
 }
 
 .success-btn:hover {
+  background: #6edaa4;
+}
+
+.input-btn:hover {
   background: #6edaa4;
 }
 
