@@ -2,7 +2,7 @@ function GetPluginSettings() {
 	return {
 		'name':			'Toast',
 		'id':			'Dutra_Toast',
-		'version':		'0.1.3',
+		'version':		'0.1.4',
 		'description':	'Faz aparecer Toasts, Alertas e Apresentações do Browser',
 		'author':		'Gabriel Dutra',
 		'help url':		'https://github.com/DutraGames/Plugin_C2_Toast',
@@ -124,7 +124,7 @@ AddStringParam('Imagem', 'Escreva o nome da imagem.', '""')
 AddStringParam('Botão OK', 'Escreva o texto do botão.', '"OK"')
 AddStringParam('Botão Confirmar', 'Escreva o texto do botão.', '"Confirmar"')
 AddStringParam('Botão Cancelar', 'Escreva o texto do botão.', '"Cancelar"')
-AddNumberParam('Tipo', '0 = Sucesso  1 = Erro  2 = Info  3 = Aviso  4 = Escuro  5 = Confirmação')
+AddNumberParam('Tipo', '0 = Sucesso  1 = Erro  2 = Info  3 = Aviso  4 = Escuro  5 = Confirmação  6 = Input')
 AddNumberParam('X', '0 = Normal  1 = Circular  2 = Vázio')
 AddNumberParam('Header', '0 = Com Fundo  1 = Sem Fundo  2 = Sem Header')
 AddAction(15, af_none, 'Alerta Personalizado', 'Notificações', 'Alerta Personalizado do ID <b>{0}</b>', 'Esta ação mostrará um alerta Personalizado', 'alertper')
@@ -155,7 +155,11 @@ AddComboParamOption('Info')
 AddComboParamOption('Aviso')
 AddComboParamOption('Escuro')
 AddComboParam('Tipo', 'Tipo da Notificação', 0)
-AddAction(17, af_none, 'Toast', 'Notificações', '<b>{2}</b>! Mensagem: <b>{1}</b>', 'Esta ação mostrará uma notificação Simples.', 'ToastSegunda')
+AddComboParamOption('Esquerda')
+AddComboParamOption('Centro')
+AddComboParamOption('Direita')
+AddComboParam('Posição', 'Posição da Notificação', 0)
+AddAction(17, af_none, 'Toast', 'Notificações', '<b>{2}</b>! Mensagem: <b>{1}</b>', 'Esta ação mostrará uma notificação Simples.', 'ToastNormal')
 
 AddNumberParam('Tempo (ms)', 'Escreva o tempo da Vibração', '1000')
 AddAction(18, af_none, 'Vibrar', 'Device', 'Vibrar <b>{0}</b> ms', 'Vibrará o aparelho', 'vibrar')
@@ -178,6 +182,20 @@ AddAnyTypeParam('Mensagem', 'Escreva a Mensagem que deseja enviar', '""')
 AddAnyTypeParam('URL', 'Escreva a URL que deseja enviar', '""')
 AddAnyTypeParam('Imagem', 'Escreva a URL da imagem', '""')
 AddAction(23, af_none, 'Pinterest', 'Compartilhamento', 'Compartilhar <b>{0}</b>', 'Compartilhará pelo Pinterest', 'SharePinter')
+
+AddStringParam('ID', 'Escreva o ID.', '"1"')
+AddStringParam('Mensagem', 'Escreva a mensagem.', '""')
+AddStringParam('Botão', 'Escreva o texto do botão.', '"OK"')
+AddStringParam('Imagem', 'Escreva o nome da imagem.', '""')
+AddComboParamOption('Normal')
+AddComboParamOption('Circular')
+AddComboParamOption('Vázio')
+AddComboParam('X', 'Tipo do X', 0)
+AddComboParamOption('Com Fundo')
+AddComboParamOption('Sem Fundo')
+AddComboParamOption('Sem Header')
+AddComboParam('Header', 'Tipo do Header', 0)
+AddAction(24, af_none, 'Alerta Input', 'Notificações', 'Alerta Input do ID <b>{0}</b>', 'Esta ação mostrará um alerta Input', 'alertnput')
 
 
 ////////////////////////////////////////
@@ -215,13 +233,21 @@ AddCondition(9, cf_trigger, 'Ao  Cancelar em Personalizado', 'Notificações', '
 AddStringParam('ID', 'Escreva o ID.', '"1"')
 AddCondition(10, cf_trigger, 'Ao Fechar Alerta Personalizado de Confirmação', 'Notificações', 'Ao Fechar o ID <b>{0}</b> do alerta personalizado de confirmação', 'Está condição verifica se se apertou o X do alerta personalizado de confirmação.', 'onCloseConfirmPer')
 
+AddStringParam('ID', 'Escreva o ID.', '"1"')
+AddCondition(11, cf_trigger, 'Ao  dar OK em Input', 'Notificações', 'Ao Dar OK no ID <b>{0}</b>', 'Está condição verifica se se apertou o OK do Alerta Input.', 'onDoneInput')
+
+AddStringParam('ID', 'Escreva o ID.', '"1"')
+AddCondition(12, cf_trigger, 'Ao Fechar Alerta Input', 'Notificações', 'Ao Fechar o ID <b>{0}</b> do alerta Input', 'Está condição verifica se se apertou o X do alerta personalizado de confirmação.', 'onCloseInput')
 
 
 ////////////////////////////////////////
 // Expressions
 
 AddExpression(0, ef_return_number, '{0}', 'Bateria', 'LevelBateria', 'Retorna a % de sua bateria.')
+
 AddExpression(1, ef_return_string, '{0}', 'lingua', 'lingua', 'Retorna o idioma da pessoa.')
+
+AddExpression(2, ef_return_string, '{0}', 'texto', 'texto', 'Retorna o texto digitado.')
 
 
 
