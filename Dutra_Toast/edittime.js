@@ -184,7 +184,7 @@ AddAnyTypeParam('Imagem', 'Escreva a URL da imagem', '""')
 AddAction(23, af_none, 'Pinterest', 'Compartilhamento', 'Compartilhar <b>{0}</b>', 'Compartilhará pelo Pinterest', 'SharePinter')
 
 AddStringParam('ID', 'Escreva o ID.', '"1"')
-AddStringParam('Mensagem', 'Escreva a mensagem.', '""')
+AddStringParam('Mensagem', 'Escreva a mensagem.', '"Mensagem"')
 AddStringParam('Botão', 'Escreva o texto do botão.', '"OK"')
 AddStringParam('Imagem', 'Escreva o nome da imagem.', '""')
 AddComboParamOption('Normal')
