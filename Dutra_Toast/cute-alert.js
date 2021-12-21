@@ -46,7 +46,7 @@ const cuteAlert = ({
     if (type === 'input') {
       btnTemplate = `
        <input type="text" class="alert-input">
-       <button class="alert-button success-bg success-btn">${buttonText}</button>
+       <button class="alert-button input-bg input-btn">${buttonText}</button>
       `;
     }
 
