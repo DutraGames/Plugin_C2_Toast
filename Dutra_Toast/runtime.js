@@ -42,6 +42,7 @@
 			this.lin = navigator.language
 			this.confirmID = 0
 			this.closeID = 0
+			this.texto = ''
 		}
 		
 		onDestroy() {
@@ -152,7 +153,7 @@
 			this.closeID = ID
 			const closeStyle = ['default', 'circle', ''][closeindex]
 			const header = ['default', '', 'hidden'][headerindex]
-			const type = ['success', 'error', 'info', 'warning', 'dark', 'question'][typeindex]
+			const type = ['success', 'error', 'info', 'warning', 'dark', 'question', 'input'][typeindex]
 			if(type !== 'question'){
 				cuteAlert({ type, title, message, img, buttonText, closeStyle, header})
 				.then(e => {
@@ -162,7 +163,19 @@
 						this.runtime.trigger(Conditions.onDonePer, this)
 					}
 				})
-			}else{
+			}else if(type === 'input'){
+				cuteAlert({type, title, img, buttonText, closeStyle, header})
+				.then(e => {
+					this.texto = e
+					if (e === 'close'){
+						this.runtime.trigger(Conditions.onCloseAlertPer, this)
+					}
+					else{
+						this.runtime.trigger(Conditions.onDonePer, this)
+					}
+				})
+			}
+			else{
 				cuteAlert({ type, title, message, img, confirmText, cancelText, closeStyle, header})
 				.then(e => {
 					if(e === 'confirm'){
@@ -195,9 +208,10 @@
 			})
 		},
 
-		ToastSegunda(title, message, img, timer, typeindex) {
+		ToastNormal(title, message, img, timer, typeindex, positionindex) {
 			const type = ['success', 'error', 'info', 'warning', 'dark'][typeindex]
-			cuteToast({ type, title, message, img, timer})
+			const position = ['left', 'center', 'right'][positionindex]
+			cuteToast({ type, title, message, img, timer, position})
 		},
 
 		vibrar(){
@@ -222,6 +236,23 @@
 
 		SharePinter(msg, url, img){
 			window.open(`https://pinterest.com/pin/create/button/?url=${url}&media=${img}&description=${msg}`, '_blank')
+		},
+
+		alertnput(ID, title, buttonText, img, closeindex, headerindex){
+			this.closeID = ID
+			const closeStyle = ['default', 'circle', ''][closeindex]
+			const header = ['default', '', 'hidden'][headerindex]
+			
+			cuteAlert({type: 'input', title, img, buttonText, closeStyle, header})
+				.then(e => {
+					this.texto = e
+					if (e === 'close'){
+						this.runtime.trigger(Conditions.onCloseInput, this)
+					}
+					else{
+						this.runtime.trigger(Conditions.onDoneInput, this)
+					}
+				})
 		},
 	}
 
@@ -272,6 +303,14 @@
 		  if(this.closeID === ID) return true
 		},
 
+		onCloseInput(ID){
+		  if(this.closeID === ID) return true
+		},
+
+		onDoneInput(ID){
+			if(this.closeID === ID) return true
+		  },
+
 	}
 
 	//////////////////////////////////////
@@ -283,6 +322,10 @@
 
 		lingua(ret){
 			ret.set_string(this.lin)
+		},
+
+		texto(ret){
+			ret.set_string(this.texto)
 		},
 	}
 
