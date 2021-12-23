@@ -80,7 +80,7 @@ const cuteAlert = ({
     const alertWrapper = document.querySelector('.alert-wrapper');
     const alertFrame = document.querySelector('.alert-frame');
     const alertClose = document.querySelector('.alert-close');
-    const alertInput = document.querySelector('.alert-input')
+    
 
 
     if (type === 'question') {
@@ -103,6 +103,14 @@ const cuteAlert = ({
         alertWrapper.remove();
         resolve('ok');
       });
+
+      if (type === 'input'){
+        const alertInput = document.querySelector('.alert-input')
+      
+        alertInput.addEventListener('change', e =>{
+          resolve(e.target.value)
+        })
+      }
     }
 
     alertClose.addEventListener('click', () => {
@@ -110,9 +118,7 @@ const cuteAlert = ({
       resolve('close');
     });
 
-    alertInput.addEventListener('change', e =>{
-      resolve(e.target.value)
-    })
+
 
 /*     alertWrapper.addEventListener('click', () => {
       alertWrapper.remove();
