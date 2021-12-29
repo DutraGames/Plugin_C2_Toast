@@ -32,12 +32,19 @@
 		}
 
 		async tick() {
-			this.battery = await navigator.getBattery()
+			let Data = new Date()
+			this.day = Data.getDate()
+			this.month = Data.getMonth()
+			this.year = Data.getFullYear()
+			this.minutes = Data.getMinutes()
+			this.hours = Data.getHours()
+			this.segunds = Data.getSeconds()
 		  }
 
 
 		async onCreate() {
 			//
+			this.runtime.tickMe(this)
 			this.battery = await navigator.getBattery()
 			this.lin = navigator.language
 			this.confirmID = 0
@@ -320,12 +327,36 @@
 			ret.set_int(this.battery.level*100)
 		},
 
-		lingua(ret){
+		Lingua(ret){
 			ret.set_string(this.lin)
 		},
 
-		texto(ret){
+		Texto(ret){
 			ret.set_string(this.texto)
+		},
+
+		Dia(ret){
+			ret.set_any(this.day)
+		},
+
+		Ano(ret){
+			ret.set_any(this.year)
+		},
+
+		Minutos(ret){
+			ret.set_any(this.minutes)
+		},
+
+		Mes(ret){
+			ret.set_any(this.month)
+		},
+
+		Segundos(ret){
+			ret.set_any(this.segunds)
+		},
+
+		Hora(ret){
+			ret.set_any(this.hours)
 		},
 	}
 

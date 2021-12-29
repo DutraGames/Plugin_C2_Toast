@@ -245,11 +245,21 @@ AddCondition(12, cf_trigger, 'Ao Fechar Alerta Input', 'Notificações', 'Ao Fec
 
 AddExpression(0, ef_return_number, '{0}', 'Bateria', 'LevelBateria', 'Retorna a % de sua bateria.')
 
-AddExpression(1, ef_return_string, '{0}', 'lingua', 'lingua', 'Retorna o idioma da pessoa.')
+AddExpression(1, ef_return_string, '{0}', 'Lingua', 'Lingua', 'Retorna o idioma da pessoa.')
 
-AddExpression(2, ef_return_string, '{0}', 'texto', 'texto', 'Retorna o texto digitado.')
+AddExpression(2, ef_return_string, '{0}', 'Texto', 'Texto', 'Retorna o texto digitado no Input.')
 
+AddExpression(3, ef_return_any, '{0}', 'Dia', 'Dia', 'Retorna o dia de hoje.')
 
+AddExpression(4, ef_return_any, '{0}', 'Ano', 'Ano', 'Retorna o ano atual.')
+
+AddExpression(5, ef_return_any, '{0}', 'Minutos', 'Minutos', 'Retorna o ano atual.')
+
+AddExpression(6, ef_return_any, '{0}', 'Mes', 'Mes', 'Retorna o mês atual.')
+
+AddExpression(7, ef_return_any, '{0}', 'Segundos', 'Segundos', 'Retorna o segundo atual.')
+
+AddExpression(8, ef_return_any, '{0}', 'Hora', 'Hora', 'Retorna a hora atual.')
 
 ////////////////////////////////////////
 ACESDone()
