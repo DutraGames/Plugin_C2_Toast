@@ -12,9 +12,9 @@
 
 <h3 align="center" id="instalar"><strong>Como instalar</strong></h3>
 
-Para instalar o plugin, você deve pegar baixar o plugin aqui no repositório, [clicando aqui](Dutra_Toast).
+Para instalar o plugin, você deve pegar e baixar o plugin aqui no repositório, [clicando aqui](Dutra_Toast).
 
-Após isso, de por na pasta de onde você instalou o construct 2, abra a pasta exporters/html5/plugins. Jogue a pasta do plugin lá dentro.
+Após isso, deve por na pasta de onde você instalou o construct 2, abra a pasta exporters/html5/plugins. Jogue a pasta do plugin lá dentro.
 
 <img src="./images/local.png" alt="local"/>
 
