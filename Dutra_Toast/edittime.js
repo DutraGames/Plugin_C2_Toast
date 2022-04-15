@@ -2,7 +2,7 @@ function GetPluginSettings() {
 	return {
 		'name':			'Toast',
 		'id':			'Dutra_Toast',
-		'version':		'0.1.4',
+		'version':		'0.1.5',
 		'description':	'Faz aparecer Toasts, Alertas e Apresentações do Browser',
 		'author':		'Gabriel Dutra',
 		'help url':		'https://github.com/DutraGames/Plugin_C2_Toast',
@@ -195,6 +195,9 @@ AddComboParamOption('Com Fundo')
 AddComboParamOption('Sem Fundo')
 AddComboParamOption('Sem Header')
 AddComboParam('Header', 'Tipo do Header', 0)
+AddComboParamOption('Sim')
+AddComboParamOption('Não')
+AddComboParam('Auto Foco', 'Iniciará com o foco no input', 0)
 AddAction(24, af_none, 'Alerta Input', 'Notificações', 'Alerta Input do ID <b>{0}</b>', 'Esta ação mostrará um alerta Input', 'alertnput')
 
 

@@ -245,12 +245,14 @@
 			window.open(`https://pinterest.com/pin/create/button/?url=${url}&media=${img}&description=${msg}`, '_blank')
 		},
 
-		alertnput(ID, title, buttonText, img, closeindex, headerindex){
+		alertnput(ID, title, buttonText, img, closeindex, headerindex, focusindex){
 			this.closeID = ID
 			const closeStyle = ['default', 'circle', ''][closeindex]
 			const header = ['default', '', 'hidden'][headerindex]
+			const focus = [true, false][focusindex]
 			
-			cuteAlert({type: 'input', title, img, buttonText, closeStyle, header})
+			cuteAlert({type: 'input', title, img, buttonText, closeStyle, header, focus})
+
 				.then(e => {
 					this.texto = e
 					if (e === 'close'){

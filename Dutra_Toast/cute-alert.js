@@ -10,6 +10,7 @@ const cuteAlert = ({
   cancelText = 'Cancel',
   closeStyle = 'default',
   header = 'default',
+  focus,
 }) => {
   return new Promise(resolve => {
     const existingAlert = document.querySelector('.alert-wrapper');
@@ -48,6 +49,7 @@ const cuteAlert = ({
        <input type="text" class="alert-input">
        <button class="alert-button input-bg input-btn">${buttonText}</button>
       `;
+      
     }
 
     let msgtemplate = `
@@ -106,6 +108,9 @@ const cuteAlert = ({
 
       if (type === 'input'){
         const alertInput = document.querySelector('.alert-input')
+        if(focus){
+          alertInput.focus()
+        }
       
         alertInput.addEventListener('change', e =>{
           resolve(e.target.value)
