@@ -172,10 +172,10 @@
 			})
 		},
 
-		ToastNormal(title, message, img, timer, typeindex, positionindex) {
-			const type = ['success', 'error', 'info', 'warning', 'dark'][typeindex]
-			const position = ['left', 'center', 'right'][positionindex]
-			cuteToast({ type, title, message, img, timer, position})
+		ToastNormal(title, message, img, timer, typeindex, positionindex, bgColor) {
+			const type = ['success', 'error', 'info', 'warning', 'dark', 'custom'][typeindex]
+			const position = ['left', 'right'][positionindex]
+			awesomeToast({ type, title, message, img, timer, position, bgColor})
 		},
 
 		vibrar(){
