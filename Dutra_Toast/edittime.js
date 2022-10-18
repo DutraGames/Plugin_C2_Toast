@@ -9,7 +9,7 @@ function GetPluginSettings() {
 		'category':		'Diálogos e Notificações',
 		'type':			'object',
 		'flags':		pf_singleglobal,
-		'dependency': 'style.css;cute-alert.js'
+		'dependency': 'style.css;awesomeAlert.js'
 	}
 }
 
