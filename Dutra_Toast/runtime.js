@@ -141,13 +141,13 @@
 			close()
 		},
 
-		alertfofo(ID,title, message, img, buttonText, typeindex, closeindex, header,bgcolor) {
+		alertfofo(ID,title, message, img, buttonText, typeindex, closeindex, header,bgColor ) {
 			this.closeID = ID
 			const type = ['success', 'error', 'info', 'warning', 'dark', 'custom'][typeindex]
 			const closeStyle = ['default', 'circle'][closeindex]
-			awesomeAlert({ type, title, message, img, buttonText, closeStyle, header, bgcolor})
+			awesomeAlert({ type, title, message, img, buttonText, closeStyle, header, bgColor })
 			.then(e => {
-				if (e === 'close'){
+				if (e === 'Close'){
 					this.runtime.trigger(Conditions.onCloseAlert, this)
 				}else{
 					this.runtime.trigger(Conditions.onDone, this)
@@ -155,16 +155,15 @@
 			})
 		},
 		
-		alertconfirm(ID, title, message, img, confirmText, cancelText, closeindex, headerindex){
+		alertconfirm(ID, title, message, img, buttonConfirm, buttonCancel, closeindex, header){
 			this.confirmID = ID
 			this.closeID = ID
-			const closeStyle = ['default', 'circle', ''][closeindex]
-			const header = ['default', '', 'hidden'][headerindex]
-			cuteAlert({ type: 'question', title, message, img, confirmText, cancelText, closeStyle, header})
+			const closeStyle = ['default', 'circle'][closeindex]
+			awesomeAlert({ type: 'question', title, message, img, buttonConfirm, buttonCancel, closeStyle, header})
 			.then(e => {
-				if(e === 'confirm'){
+				if(e === 'Confirm'){
 					this.runtime.trigger(Conditions.onConfirm, this)
-				}else if(e === 'close'){
+				}else if(e === 'Close'){
 					this.runtime.trigger(Conditions.onCloseConfirm, this)
 				}
 				else{
