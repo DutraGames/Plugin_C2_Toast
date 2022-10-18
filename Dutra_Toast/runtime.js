@@ -155,47 +155,6 @@
 			})
 		},
 		
-		alertper(ID,title, message, img, buttonText, confirmText, cancelText, typeindex, closeindex, headerindex) {
-			this.closeID = ID
-			const closeStyle = ['default', 'circle', ''][closeindex]
-			const header = ['default', '', 'hidden'][headerindex]
-			const type = ['success', 'error', 'info', 'warning', 'dark', 'question', 'input'][typeindex]
-			if(type !== 'question'){
-				cuteAlert({ type, title, message, img, buttonText, closeStyle, header})
-				.then(e => {
-					if (e === 'close'){
-						this.runtime.trigger(Conditions.onCloseAlertPer, this)
-					}else{
-						this.runtime.trigger(Conditions.onDonePer, this)
-					}
-				})
-			}else if(type === 'input'){
-				cuteAlert({type, title, img, buttonText, closeStyle, header})
-				.then(e => {
-					this.texto = e
-					if (e === 'close'){
-						this.runtime.trigger(Conditions.onCloseAlertPer, this)
-					}
-					else{
-						this.runtime.trigger(Conditions.onDonePer, this)
-					}
-				})
-			}
-			else{
-				cuteAlert({ type, title, message, img, confirmText, cancelText, closeStyle, header})
-				.then(e => {
-					if(e === 'confirm'){
-						this.runtime.trigger(Conditions.onConfirmPer, this)
-					}else if(e === 'close'){
-						this.runtime.trigger(Conditions.onCloseConfirmPer, this)
-					}
-					else{
-						this.runtime.trigger(Conditions.onCancelPer, this)
-					}
-				})
-			}
-		},
-		
 		alertconfirm(ID, title, message, img, confirmText, cancelText, closeindex, headerindex){
 			this.confirmID = ID
 			this.closeID = ID
