@@ -208,21 +208,6 @@ AddStringParam('ID', 'Escreva o ID.', '"1"')
 AddCondition(5, cf_trigger, 'Ao  dar OK em Bonito', 'Notificações', 'Ao Dar OK no ID <b>{0}</b>', 'Está condição verifica se se apertou o OK do Alerta Bonito.', 'onDone')
 
 AddStringParam('ID', 'Escreva o ID.', '"1"')
-AddCondition(6, cf_trigger, 'Ao Fechar Alerta Personalizado', 'Notificações', 'Ao Fechar o ID <b>{0}</b> Personalizado', 'Está condição verifica se se apertou o X dos alertas Personalizados.', 'onCloseAlertPer')
-
-AddStringParam('ID', 'Escreva o ID.', '"1"')
-AddCondition(7, cf_trigger, 'Ao  dar OK em Personalizado', 'Notificações', 'Ao Dar OK no ID <b>{0}</b>', 'Está condição verifica se se apertou o OK do Alerta Personalizado.', 'onDonePer')
-
-AddStringParam('ID', 'Escreva o ID.', '"1"')
-AddCondition(8, cf_trigger, 'Ao  Confirmar em Personalizado', 'Notificações', 'Ao Confirmar o  ID <b>{0}</b>', 'Está condição verifica se confirmou o Alerta Personalizado.', 'onConfirmPer')
-
-AddStringParam('ID', 'Escreva o ID.', '"1"')
-AddCondition(9, cf_trigger, 'Ao  Cancelar em Personalizado', 'Notificações', 'Ao Cancelar o  ID <b>{0}</b>', 'Está condição verifica se cancelou o Alerta Personalizado.', 'onCancelPer')
-
-AddStringParam('ID', 'Escreva o ID.', '"1"')
-AddCondition(10, cf_trigger, 'Ao Fechar Alerta Personalizado de Confirmação', 'Notificações', 'Ao Fechar o ID <b>{0}</b> do alerta personalizado de confirmação', 'Está condição verifica se se apertou o X do alerta personalizado de confirmação.', 'onCloseConfirmPer')
-
-AddStringParam('ID', 'Escreva o ID.', '"1"')
 AddCondition(11, cf_trigger, 'Ao  dar OK em Input', 'Notificações', 'Ao Dar OK no ID <b>{0}</b>', 'Está condição verifica se se apertou o OK do Alerta Input.', 'onDoneInput')
 
 AddStringParam('ID', 'Escreva o ID.', '"1"')

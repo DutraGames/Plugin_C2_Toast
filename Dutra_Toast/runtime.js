@@ -245,29 +245,9 @@
 			if(this.closeID === ID) return true
 		  },
 
-		  onCloseAlertPer(ID){
-			if(this.closeID === ID) return true
-		  },
-
 		  onDone(ID){
 			if(this.closeID === ID) return true
 		  },
-
-		  onDonePer(ID){
-			if(this.closeID === ID) return true
-		  },
-
-		  onConfirmPer(ID){
-			if(this.confirmID === ID) return true
-		},
-
-		onCancelPer(ID){
-		  if(this.confirmID === ID) return true
-		},
-
-		onCloseConfirmPer(ID){
-		  if(this.closeID === ID) return true
-		},
 
 		onCloseInput(ID){
 		  if(this.closeID === ID) return true
