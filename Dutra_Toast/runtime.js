@@ -141,11 +141,11 @@
 			close()
 		},
 
-		alertfofo(ID,title, message, img, buttonText, typeindex, closeindex, header,bgColor ) {
+		alertfofo(ID,title, message, img, buttonOK, typeindex, closeindex, header,bgColor ) {
 			this.closeID = ID
 			const type = ['success', 'error', 'info', 'warning', 'dark', 'custom'][typeindex]
 			const closeStyle = ['default', 'circle'][closeindex]
-			awesomeAlert({ type, title, message, img, buttonText, closeStyle, header, bgColor })
+			awesomeAlert({ type, title, message, img, buttonOK, closeStyle, header, bgColor })
 			.then(e => {
 				if (e === 'Close'){
 					this.runtime.trigger(Conditions.onCloseAlert, this)
@@ -202,20 +202,18 @@
 			window.open(`https://pinterest.com/pin/create/button/?url=${url}&media=${img}&description=${msg}`, '_blank')
 		},
 
-		alertnput(ID, title, buttonText, img, closeindex, headerindex, focusindex){
+		alertnput(ID, title, buttonOK, img, closeindex, header, placeholderInput){
 			this.closeID = ID
-			const closeStyle = ['default', 'circle', ''][closeindex]
-			const header = ['default', '', 'hidden'][headerindex]
-			const focus = [true, false][focusindex]
+			const closeStyle = ['default', 'circle'][closeindex]
 			
-			cuteAlert({type: 'input', title, img, buttonText, closeStyle, header, focus})
+			awesomeAlert({type: 'input', title, img, buttonOK, closeStyle, header, placeholderInput})
 
 				.then(e => {
-					this.texto = e
-					if (e === 'close'){
+					if (e === 'Close'){
 						this.runtime.trigger(Conditions.onCloseInput, this)
 					}
 					else{
+						this.texto = e
 						this.runtime.trigger(Conditions.onDoneInput, this)
 					}
 				})
