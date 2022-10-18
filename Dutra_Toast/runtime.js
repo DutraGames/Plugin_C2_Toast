@@ -141,12 +141,11 @@
 			close()
 		},
 
-		alertfofo(ID,title, message, img, buttonText, typeindex, closeindex, headerindex) {
+		alertfofo(ID,title, message, img, buttonText, typeindex, closeindex, header,bgcolor) {
 			this.closeID = ID
-			const type = ['success', 'error', 'info', 'warning', 'dark'][typeindex]
-			const closeStyle = ['default', 'circle', ''][closeindex]
-			const header = ['default', '', 'hidden'][headerindex]
-			cuteAlert({ type, title, message, img, buttonText, closeStyle, header})
+			const type = ['success', 'error', 'info', 'warning', 'dark', 'custom'][typeindex]
+			const closeStyle = ['default', 'circle'][closeindex]
+			awesomeAlert({ type, title, message, img, buttonText, closeStyle, header, bgcolor})
 			.then(e => {
 				if (e === 'close'){
 					this.runtime.trigger(Conditions.onCloseAlert, this)

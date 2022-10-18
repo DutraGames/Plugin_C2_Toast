@@ -2,7 +2,7 @@ function GetPluginSettings() {
 	return {
 		'name':			'Toast',
 		'id':			'Dutra_Toast',
-		'version':		'0.1.5',
+		'version':		'0.2.0',
 		'description':	'Faz aparecer Toasts, Alertas e Apresentações do Browser',
 		'author':		'Gabriel Dutra',
 		'help url':		'https://github.com/DutraGames/Plugin_C2_Toast',
@@ -106,16 +106,16 @@ AddComboParamOption('Erro')
 AddComboParamOption('Info')
 AddComboParamOption('Aviso')
 AddComboParamOption('Escuro')
+AddComboParamOption('Customizado')
 AddComboParam('Tipo', 'Tipo do alerta', 0)
 AddComboParamOption('Normal')
 AddComboParamOption('Circular')
-AddComboParamOption('Vázio')
 AddComboParam('X', 'Tipo do X', 0)
-AddComboParamOption('Com Fundo')
-AddComboParamOption('Sem Fundo')
 AddComboParamOption('Sem Header')
+AddComboParamOption('Com Header')
 AddComboParam('Header', 'Tipo do Header', 0)
-AddAction(14, af_none, 'Alerta Bonito', 'Notificações', 'Alerta Bonito do ID <b>{0}</b>', 'Esta ação mostrará um alerta mais bonito', 'alertfofo')
+AddStringParam('BG Color', 'Escreva a cor personalizada. (Só é ativado no customizado).', '"#2dd284"')
+AddAction(14, af_none, 'Alerta incrível', 'Notificações', 'Alerta incrível do ID <b>{0}</b>', 'Esta ação mostrará um alerta mais incrível', 'alertfofo')
 
 AddStringParam('ID', 'Escreva o ID.', '"1"')
 AddStringParam('Título', 'Escreva o Título.', '"Título"')
