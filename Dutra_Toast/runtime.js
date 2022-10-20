@@ -218,6 +218,27 @@
 					}
 				})
 		},
+
+		alertopinion(ID, title, message, img, buttonConfirm, buttonOK, buttonCancel, closeindex, header){
+			this.confirmID = ID
+			this.closeID = ID
+			const closeStyle = ['default', 'circle'][closeindex]
+			awesomeAlert({ type: 'opinion', title, message, img, buttonConfirm, buttonOK, buttonCancel, closeStyle, header})
+			.then(e => {
+				if(e === 'Confirm'){
+					this.runtime.trigger(Conditions.onConfirmOpinion, this)
+				}
+				else if(e === 'Cancel'){
+					this.runtime.trigger(Conditions.onCancelOpinion, this)
+				}
+				else if(e === 'OK'){
+					this.runtime.trigger(Conditions.onDoneOpinion, this)
+				}
+				else{
+					this.runtime.trigger(Conditions.onCloseOpinion, this)
+				}
+			})
+		},
 	}
 
 	//////////////////////////////////////
@@ -252,6 +273,22 @@
 		},
 
 		onDoneInput(ID){
+			if(this.closeID === ID) return true
+		  },
+
+		  onConfirmOpinion(ID){
+			if(this.confirmID === ID) return true
+		},
+
+		onCancelOpinion(ID){
+		  if(this.confirmID === ID) return true
+		},
+
+		onCloseOpinion(ID){
+		  if(this.closeID === ID) return true
+		},
+
+		onDoneOpinion(ID){
 			if(this.closeID === ID) return true
 		  },
 

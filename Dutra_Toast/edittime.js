@@ -183,6 +183,20 @@ AddComboParam('Header', 'Tipo do Header', 0)
 AddStringParam('Placeholder', 'Escreva o que terá no placeholder.', '"Digite seu Nome"')
 AddAction(24, af_none, 'Alerta Input', 'Notificações', 'Alerta Input do ID <b>{0}</b>', 'Esta ação mostrará um alerta Input', 'alertnput')
 
+AddStringParam('ID', 'Escreva o ID.', '"1"')
+AddStringParam('Título', 'Escreva o Título.', '"Título"')
+AddStringParam('Mensagem', 'Escreva uma Mensagem.', '"Mensagem"')
+AddStringParam('Imagem', 'Escreva o nome da imagem.', '""')
+AddStringParam('Botão 1', 'Escreva o texto do botão.', '"Confirmar"')
+AddStringParam('Botão 2', 'Escreva o texto do botão.', '"OK"')
+AddStringParam('Botão 3', 'Escreva o texto do botão.', '"Cancelar"')
+AddComboParamOption('Normal')
+AddComboParamOption('Circular')
+AddComboParam('X', 'Tipo do X', 0)
+AddComboParamOption('Sem Header')
+AddComboParamOption('Com Header')
+AddComboParam('Header', 'Tipo do Header', 0)
+AddAction(25, af_none, 'Alerta de Opnião', 'Notificações', 'Alerta de Opnião de ID: <b>{0}</b>', 'Esta ação mostrará um alerta de opnião', 'alertopinion')
 
 ////////////////////////////////////////
 // Conditions
@@ -209,6 +223,18 @@ AddCondition(11, cf_trigger, 'Ao  dar OK em Input', 'Notificações', 'Ao Dar OK
 
 AddStringParam('ID', 'Escreva o ID.', '"1"')
 AddCondition(12, cf_trigger, 'Ao Fechar Alerta Input', 'Notificações', 'Ao Fechar o ID <b>{0}</b> do alerta Input', 'Está condição verifica se se apertou o X do alerta personalizado de confirmação.', 'onCloseInput')
+
+AddStringParam('ID', 'Escreva o ID.', '"1"')
+AddCondition(13, cf_trigger, 'Ao Clicar em botão 1', 'Notificações', 'Ao Clicar em botão 1 do ID <b>{0}</b>', 'Está condição verifica se se apertou o botão 1.', 'onConfirmOpinion')
+
+AddStringParam('ID', 'Escreva o ID.', '"1"')
+AddCondition(14, cf_trigger, 'Ao Clicar em botão 2', 'Notificações', 'Ao Clicar em botão 2 do ID <b>{0}</b>', 'Está condição verifica se se apertou o botão 2.', 'onDoneOpinion')
+
+AddStringParam('ID', 'Escreva o ID.', '"1"')
+AddCondition(15, cf_trigger, 'Ao Clicar em botão 3', 'Notificações', 'Ao Clicar em botão 3 do ID <b>{0}</b>', 'Está condição verifica se se apertou o botão 3.', 'onCancelOpinion')
+
+AddStringParam('ID', 'Escreva o ID.', '"1"')
+AddCondition(16, cf_trigger, 'Ao fechar Opinião', 'Notificações', 'Ao fechar opinião do ID <b>{0}</b>', 'Está condição verifica se fechou opinião.', 'onCloseOpinion')
 
 
 ////////////////////////////////////////
