@@ -247,7 +247,7 @@ const awesomeToast = ({
                 <span class="toast-title">${title}</span>
                 <span class="toast-message">${message}</span>
             </div>
-            <img src=${img} class="toast-img">
+            <img src=${img} class="toast-img" alt="">
             <span class="toast-close" id="${toastId}-toast-close">X</span>
         </div>
         `
