@@ -163,7 +163,12 @@ const awesomeAlert = ({
             const AlertButtonConfirm = document.querySelector('.btn-confirm')
             const AlertButtonCancel = document.querySelector('.btn-cancel')
 
-            AlertButtonOpinion[1].addEventListener('click', () => {
+            header ? AlertButtonOpinion[1].addEventListener('click', () => {
+                resolve('OK')
+                AlertWallpaper.remove()
+            })
+            :
+            AlertButtonOpinion[0].addEventListener('click', () => {
                 resolve('OK')
                 AlertWallpaper.remove()
             })
