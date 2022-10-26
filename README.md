@@ -10,9 +10,6 @@ Caso prefira ler a [Documentação do Plugin](docs.md).
 
 **Condições do Plugin:**
 
-<img src="./images/Condictions.png" alt="condictions"/>
-
-
 **Ações do Plugin:**
 
 **Expressões do Plugin:**
