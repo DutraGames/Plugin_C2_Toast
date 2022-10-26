@@ -15,16 +15,9 @@ Caso prefira ler a [Documentação do Plugin](docs.md).
 
 **Ações do Plugin:**
 
-<img src="./images/actions1.png" alt="actions1"/>
-<img src="./images/actions2.png" alt="actions2"/>
-
-
 **Expressões do Plugin:**
-
-<img src="./images/exp1.png" alt="exp1"/>
-<img src="./images/exp2.png" alt="exp2"/>
 
 ## **Biblioteca**:
 
-[Repositório Cute Alert](https://github.com/gustavosmanc/cute-alert)
+[Repositório Awesome-Alert](https://github.com/DutraGames/awesome-alert)
 
