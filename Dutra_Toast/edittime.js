@@ -198,6 +198,24 @@ AddComboParamOption('Com Header')
 AddComboParam('Header', 'Tipo do Header', 0)
 AddAction(25, af_none, 'Alerta de Opnião', 'Notificações Especiais', 'Alerta de Opnião de ID: <b>{0}</b>', 'Esta ação mostrará um alerta de opnião', 'alertopinion')
 
+AddStringParam('ID', 'Escreva o ID.', '"1"')
+AddStringParam('Título', 'Escreva o Título.', '"Título"')
+AddStringParam('Mensagem', 'Escreva a mensagem.', '"Mensagem"')
+AddStringParam('Botão', 'Escreva o texto do botão.', '"OK"')
+AddStringParam('Imagem', 'Escreva o nome da imagem.', '""')
+AddComboParamOption('Sucesso')
+AddComboParamOption('Erro')
+AddComboParamOption('Info')
+AddComboParamOption('Aviso')
+AddComboParamOption('Escuro')
+AddComboParamOption('Customizado')
+AddComboParam('Tipo', 'Tipo da Notificação', 0)
+AddComboParamOption('Sem Header')
+AddComboParamOption('Com Header')
+AddComboParam('Header', 'Tipo do Header', 0)
+AddStringParam('BG Color', 'Escreva a cor personalizada. (Só é ativado no customizado).', '"#2dd284"')
+AddAction(26, af_none, 'Alerta Horizontal', 'Notificações Especiais', 'Alerta Horizontal do ID <b>{0}</b>', 'Esta ação mostrará um alerta Horizontal', 'alertHorizontal')
+
 ////////////////////////////////////////
 // Conditions
 
@@ -235,6 +253,9 @@ AddCondition(15, cf_trigger, 'Ao Clicar em botão 3', 'Notificações Especiais'
 
 AddStringParam('ID', 'Escreva o ID.', '"1"')
 AddCondition(16, cf_trigger, 'Ao fechar Opinião', 'Notificações Especiais', 'Ao fechar opinião do ID <b>{0}</b>', 'Está condição verifica se fechou opinião.', 'onCloseOpinion')
+
+AddStringParam('ID', 'Escreva o ID.', '"1"')
+AddCondition(17, cf_trigger, 'Ao dar OK no Horizontal', 'Notificações Especiais', 'Ao dar OK no Horizontal do ID <b>{0}</b>', 'Está condição verifica se deu OK no Horizontal.', 'onDoneHorizontal')
 
 
 ////////////////////////////////////////

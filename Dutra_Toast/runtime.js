@@ -28,7 +28,7 @@
 	class Instance {
 		constructor(type) {
 			this.type = type
-			this.runtime = type.runtime	
+			this.runtime = type.runtime
 		}
 
 		async tick() {
@@ -39,7 +39,7 @@
 			this.minutes = Data.getMinutes()
 			this.hours = Data.getHours()
 			this.segunds = Data.getSeconds()
-		  }
+		}
 
 
 		async onCreate() {
@@ -51,7 +51,7 @@
 			this.closeID = 0
 			this.texto = ''
 		}
-		
+
 		onDestroy() {
 			//
 		}
@@ -60,184 +60,195 @@
 	//////////////////////////////////////
 	// Actions
 	const Actions = {
-		alertmsg(msg){
+		alertmsg(msg) {
 			alert(msg)
 		},
 
-		appStore(ID, type){
+		appStore(ID, type) {
 			const open = ['_blank', '_self'][type]
 			window.open(`https://play.google.com/store/apps/details?id=${ID}`, open)
 		},
 
-		instaGo(name, type){
+		instaGo(name, type) {
 			const open = ['_blank', '_self'][type]
 			window.open(`https://www.instagram.com/${name}`, open)
 		},
 
-		twitterGo(name, type){
+		twitterGo(name, type) {
 			const open = ['_blank', '_self'][type]
 			window.open(`https://twitter.com/${name}`, open)
 		},
-		twitterGo(name, type){
+		twitterGo(name, type) {
 			const open = ['_blank', '_self'][type]
 			window.open(`https://twitter.com/${name}`, open)
 		},
-		twitterGo(name, type){
+		twitterGo(name, type) {
 			const open = ['_blank', '_self'][type]
 			window.open(`https://twitter.com/${name}`, open)
 		},
 
-		twitterGo(name, type){	
+		twitterGo(name, type) {
 			const open = ['_blank', '_self'][type]
 			window.open(`https://twitter.com/${name}`, open)
 		},
-		
-		whatsGo(phone, type){
+
+		whatsGo(phone, type) {
 			const open = ['_blank', '_self'][type]
 			window.open(`https://api.whatsapp.com/send?phone=${phone}`, open)
 		},
-		
-		telegramGo(user, type){
+
+		telegramGo(user, type) {
 			const open = ['_blank', '_self'][type]
 			window.open(`https://t.me/${user}`, open)
 		},
-		
-		githubGo(login, type){
+
+		githubGo(login, type) {
 			const open = ['_blank', '_self'][type]
 			window.open(`https://github.com/${login}`, open)
 		},
-		
-		faceGo(UserID, type){
+
+		faceGo(UserID, type) {
 			const open = ['_blank', '_self'][type]
 			window.open(`https://www.facebook.com/${UserID}`, open)
 		},
-		
-		itchGo(user, type){
+
+		itchGo(user, type) {
 			const open = ['_blank', '_self'][type]
 			window.open(`https://itch.io/profile/${user}`, open)
 		},
-		
-		joltGo(user, type){
+
+		joltGo(user, type) {
 			const open = ['_blank', '_self'][type]
 			window.open(`https://gamejolt.com/@${user}`, open)
 		},
-		
-		discordGO(code, type){
+
+		discordGO(code, type) {
 			const open = ['_blank', '_self'][type]
 			window.open(`https://discord.gg/invite/${code}`, open)
 		},
-		
-		devStore(ID, type){
+
+		devStore(ID, type) {
 			const open = ['_blank', '_self'][type]
 			window.open(`https://play.google.com/store/apps/dev?id=${ID}`, open)
 		},
 
-		openURL(URL, type){
+		openURL(URL, type) {
 			const open = ['_blank', '_self'][type]
 			window.open(URL, open)
 		},
 
-		closeApp(){
+		closeApp() {
 			close()
 		},
 
-		alertfofo(ID,title, message, img, buttonOK, typeindex, closeindex, header,bgColor ) {
+		alertfofo(ID, title, message, img, buttonOK, typeindex, closeindex, header, bgColor) {
 			this.closeID = ID
 			const type = ['success', 'error', 'info', 'warning', 'dark', 'custom'][typeindex]
 			const closeStyle = ['default', 'circle'][closeindex]
 			awesomeAlert({ type, title, message, img, buttonOK, closeStyle, header, bgColor })
-			.then(e => {
-				if (e === 'Close'){
-					this.runtime.trigger(Conditions.onCloseAlert, this)
-				}else{
-					this.runtime.trigger(Conditions.onDone, this)
-				}
-			})
+				.then(e => {
+					if (e === 'Close') {
+						this.runtime.trigger(Conditions.onCloseAlert, this)
+					} else {
+						this.runtime.trigger(Conditions.onDone, this)
+					}
+				})
 		},
-		
-		alertconfirm(ID, title, message, img, buttonConfirm, buttonCancel, closeindex, header){
+
+		alertconfirm(ID, title, message, img, buttonConfirm, buttonCancel, closeindex, header) {
 			this.confirmID = ID
 			this.closeID = ID
 			const closeStyle = ['default', 'circle'][closeindex]
-			awesomeAlert({ type: 'question', title, message, img, buttonConfirm, buttonCancel, closeStyle, header})
-			.then(e => {
-				if(e === 'Confirm'){
-					this.runtime.trigger(Conditions.onConfirm, this)
-				}else if(e === 'Close'){
-					this.runtime.trigger(Conditions.onCloseConfirm, this)
-				}
-				else{
-					this.runtime.trigger(Conditions.onCancel, this)
-				}
-			})
+			awesomeAlert({ type: 'question', title, message, img, buttonConfirm, buttonCancel, closeStyle, header })
+				.then(e => {
+					if (e === 'Confirm') {
+						this.runtime.trigger(Conditions.onConfirm, this)
+					} else if (e === 'Close') {
+						this.runtime.trigger(Conditions.onCloseConfirm, this)
+					}
+					else {
+						this.runtime.trigger(Conditions.onCancel, this)
+					}
+				})
 		},
 
 		ToastNormal(title, message, img, timer, typeindex, positionindex, bgColor) {
 			const type = ['success', 'error', 'info', 'warning', 'dark', 'custom'][typeindex]
 			const position = ['left', 'right'][positionindex]
-			awesomeToast({ type, title, message, img, timer, position, bgColor})
+			awesomeToast({ type, title, message, img, timer, position, bgColor })
 		},
 
-		vibrar(){
+		vibrar() {
 			navigator.vibrate(5000)
 		},
 
-		ShareWhats(msg){
+		ShareWhats(msg) {
 			window.open(`https://api.whatsapp.com/send?text=${msg}`, '_blank')
 		},
-		
-		ShareFace(msg){
+
+		ShareFace(msg) {
 			window.open(`https://www.facebook.com/sharer/sharer.php?u=${msg}`, '_blank')
 		},
-		
-		ShareTelegram(msg, url){
+
+		ShareTelegram(msg, url) {
 			window.open(`https://telegram.me/share/url?url=${url}&text=${msg}`, '_blank')
 		},
-		
-		ShareTwitter(msg, url){
+
+		ShareTwitter(msg, url) {
 			window.open(`https://twitter.com/intent/tweet?url=${url}&text=${msg}`, '_blank')
 		},
 
-		SharePinter(msg, url, img){
+		SharePinter(msg, url, img) {
 			window.open(`https://pinterest.com/pin/create/button/?url=${url}&media=${img}&description=${msg}`, '_blank')
 		},
 
-		alertnput(ID, title, buttonOK, img, closeindex, header, placeholderInput){
+		alertnput(ID, title, buttonOK, img, closeindex, header, placeholderInput) {
 			this.closeID = ID
 			const closeStyle = ['default', 'circle'][closeindex]
-			
-			awesomeAlert({type: 'input', title, img, buttonOK, closeStyle, header, placeholderInput})
+
+			awesomeAlert({ type: 'input', title, img, buttonOK, closeStyle, header, placeholderInput })
 
 				.then(e => {
-					if (e === 'Close'){
+					if (e === 'Close') {
 						this.runtime.trigger(Conditions.onCloseInput, this)
 					}
-					else{
+					else {
 						this.texto = e
 						this.runtime.trigger(Conditions.onDoneInput, this)
 					}
 				})
 		},
 
-		alertopinion(ID, title, message, img, buttonConfirm, buttonOK, buttonCancel, closeindex, header){
+		alertopinion(ID, title, message, img, buttonConfirm, buttonOK, buttonCancel, closeindex, header) {
 			this.confirmID = ID
 			this.closeID = ID
 			const closeStyle = ['default', 'circle'][closeindex]
-			awesomeAlert({ type: 'opinion', title, message, img, buttonConfirm, buttonOK, buttonCancel, closeStyle, header})
-			.then(e => {
-				if(e === 'Confirm'){
-					this.runtime.trigger(Conditions.onConfirmOpinion, this)
-				}
-				else if(e === 'Cancel'){
-					this.runtime.trigger(Conditions.onCancelOpinion, this)
-				}
-				else if(e === 'OK'){
-					this.runtime.trigger(Conditions.onDoneOpinion, this)
-				}
-				else{
-					this.runtime.trigger(Conditions.onCloseOpinion, this)
-				}
-			})
+			awesomeAlert({ type: 'opinion', title, message, img, buttonConfirm, buttonOK, buttonCancel, closeStyle, header })
+				.then(e => {
+					if (e === 'Confirm') {
+						this.runtime.trigger(Conditions.onConfirmOpinion, this)
+					}
+					else if (e === 'Cancel') {
+						this.runtime.trigger(Conditions.onCancelOpinion, this)
+					}
+					else if (e === 'OK') {
+						this.runtime.trigger(Conditions.onDoneOpinion, this)
+					}
+					else {
+						this.runtime.trigger(Conditions.onCloseOpinion, this)
+					}
+				})
+		},
+
+		alertHorizontal(ID, title, message, buttonOK, img, typeindex, header, bgColor) {
+			this.closeID = ID
+			const type = ['success', 'error', 'info', 'warning', 'dark', 'custom'][typeindex]
+			awesomeHorizontal({ type, title, message, img, buttonOK, header, bgColor })
+				.then(e => {
+					if (e === 'ok') {
+						this.runtime.trigger(Conditions.onDoneHorizontal, this)
+					}
+				})
 		},
 	}
 
@@ -246,90 +257,94 @@
 	const Conditions = {
 		isOnline() {
 			return navigator ? navigator.onLine : false
-		  },
-
-		  onConfirm(ID){
-			  if(this.confirmID === ID) return true
-		  },
-
-		  onCancel(ID){
-			if(this.confirmID === ID) return true
-		  },
-
-		  onCloseConfirm(ID){
-			if(this.closeID === ID) return true
-		  },
-
-		  onCloseAlert(ID){
-			if(this.closeID === ID) return true
-		  },
-
-		  onDone(ID){
-			if(this.closeID === ID) return true
-		  },
-
-		onCloseInput(ID){
-		  if(this.closeID === ID) return true
 		},
 
-		onDoneInput(ID){
-			if(this.closeID === ID) return true
-		  },
-
-		  onConfirmOpinion(ID){
-			if(this.confirmID === ID) return true
+		onConfirm(ID) {
+			if (this.confirmID === ID) return true
 		},
 
-		onCancelOpinion(ID){
-		  if(this.confirmID === ID) return true
+		onCancel(ID) {
+			if (this.confirmID === ID) return true
 		},
 
-		onCloseOpinion(ID){
-		  if(this.closeID === ID) return true
+		onCloseConfirm(ID) {
+			if (this.closeID === ID) return true
 		},
 
-		onDoneOpinion(ID){
-			if(this.closeID === ID) return true
-		  },
+		onCloseAlert(ID) {
+			if (this.closeID === ID) return true
+		},
+
+		onDone(ID) {
+			if (this.closeID === ID) return true
+		},
+
+		onCloseInput(ID) {
+			if (this.closeID === ID) return true
+		},
+
+		onDoneInput(ID) {
+			if (this.closeID === ID) return true
+		},
+
+		onConfirmOpinion(ID) {
+			if (this.confirmID === ID) return true
+		},
+
+		onCancelOpinion(ID) {
+			if (this.confirmID === ID) return true
+		},
+
+		onCloseOpinion(ID) {
+			if (this.closeID === ID) return true
+		},
+
+		onDoneOpinion(ID) {
+			if (this.closeID === ID) return true
+		},
+
+		onDoneHorizontal(ID) {
+			if (this.closeID === ID) return true
+		},
 
 	}
 
 	//////////////////////////////////////
 	// Expressions
 	const Expressions = {
-		LevelBateria(ret){
-			ret.set_int(this.battery.level*100)
+		LevelBateria(ret) {
+			ret.set_int(this.battery.level * 100)
 		},
 
-		Lingua(ret){
+		Lingua(ret) {
 			ret.set_string(this.lin)
 		},
 
-		Texto(ret){
+		Texto(ret) {
 			ret.set_string(this.texto)
 		},
 
-		Dia(ret){
+		Dia(ret) {
 			ret.set_any(this.day)
 		},
 
-		Ano(ret){
+		Ano(ret) {
 			ret.set_any(this.year)
 		},
 
-		Minutos(ret){
+		Minutos(ret) {
 			ret.set_any(this.minutes)
 		},
 
-		Mes(ret){
+		Mes(ret) {
 			ret.set_any(this.month)
 		},
 
-		Segundos(ret){
+		Segundos(ret) {
 			ret.set_any(this.segunds)
 		},
 
-		Hora(ret){
+		Hora(ret) {
 			ret.set_any(this.hours)
 		},
 	}

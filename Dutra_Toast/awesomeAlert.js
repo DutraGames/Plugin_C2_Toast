@@ -90,7 +90,7 @@ const awesomeAlert = ({
             `
         }
 
-        if(playSound !== null){
+        if (playSound !== null) {
             let sound = new Audio(playSound)
             sound.play()
         }
@@ -167,11 +167,11 @@ const awesomeAlert = ({
                 resolve('OK')
                 AlertWallpaper.remove()
             })
-            :
-            AlertButtonOpinion[0].addEventListener('click', () => {
-                resolve('OK')
-                AlertWallpaper.remove()
-            })
+                :
+                AlertButtonOpinion[0].addEventListener('click', () => {
+                    resolve('OK')
+                    AlertWallpaper.remove()
+                })
 
             AlertButtonConfirm.addEventListener('click', () => {
                 resolve('Confirm')
@@ -240,7 +240,7 @@ const awesomeToast = ({
         // ID Toast
         const toastId = id()
 
-        if(playSound !== null){
+        if (playSound !== null) {
             let sound = new Audio(playSound)
             sound.play()
         }
@@ -322,7 +322,7 @@ const awesomeHorizontal = ({
 
         let templateHeader = `
         <div class="horizontal-header ${type}-bg">
-            <img src=${img} class="horizontal-img">
+            <img src=${img} class="horizontal-img" alt="">
         </div>`
 
         let TemplateHorizontal = `
@@ -355,12 +355,12 @@ const awesomeHorizontal = ({
         `
         }
 
-        if(playSound !== null){
+        if (playSound !== null) {
             let sound = new Audio(playSound)
             sound.play()
         }
 
-        if(!header){
+        if (!header) {
             TemplateHorizontal = `
             <div class="alert-wallpaper">
                 <div class="horizontal-frame">
