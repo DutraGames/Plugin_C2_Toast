@@ -2,5 +2,4 @@
 
 | Name  | Local                                           |
 | ----- | ----------------------------------------------- |
-| Toast | [Plugin](C2\Toast\Construct-Plugin\Dutra_Toast) |
 | Toast | [Plugin](C2/Toast/Construct-Plugin/Dutra_Toast) |
