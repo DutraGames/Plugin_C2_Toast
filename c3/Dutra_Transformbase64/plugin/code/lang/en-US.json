@@ -1,0 +1,71 @@
+﻿{
+  "$schema": "../../plugin.lang.schema.json",
+
+  "languageTag": "en-US",
+  "fileDescription": "Strings for Tranform Base64.",
+  "text": {
+    "plugins": {
+      "dutra_transformbase64": {
+        "name": "Transform Base64",
+        "description": "Transform images in base64.",
+        "help-url": "https://www.construct.net",
+        "properties": {},
+        "aceCategories": {
+          "transform": "Tranform"
+        },
+        "conditions": {
+          "on-success": {
+            "list-name": "On Success",
+            "display-text": "on Success {0}",
+            "description": "Success in transform image in base64",
+            "params": {
+              "tag": {
+                "name": "Tag",
+                "desc": "TAG transform"
+              }
+            }
+          },
+          "on-error": {
+            "list-name": "On Error",
+            "display-text": "On Error {0}",
+            "description": "Error in transform base64",
+            "params": {
+              "tag": {
+                "name": "Tag",
+                "desc": "TAG transform "
+              }
+            }
+          }
+        },
+        "actions": {
+          "transform": {
+            "list-name": "Transform",
+            "display-text": "Transform [b]{0}[/b] in base64, image [i]{1}[/i]",
+            "description": "Transform images in base64",
+            "params": {
+              "tag": {
+                "name": "Tag",
+                "desc": "Tag to image"
+              },
+              "urlimage": {
+                "name": "Urlimage",
+                "desc": "url image"
+              }
+            }
+          }
+        },
+        "expressions": {
+          "data64": {
+            "translated-name": "Data64",
+            "description": "value convert image"
+          }
+        },
+        "debugger": {
+          "transform-base64": "Transform Base64",
+          "last-image": "Last Image",
+          "last-TAG": "Last TAG"
+        }
+      }
+    }
+  }
+}

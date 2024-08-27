@@ -1,0 +1,57 @@
+﻿{
+  "$schema": "../aces.schema.json",
+
+  "transform": {
+    "conditions": [
+      {
+        "id": "on-success",
+        "scriptName": "OnSuccess",
+        "highlight": true,
+        "isTrigger": true,
+        "params": [
+          {
+            "id": "tag",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "id": "on-error",
+        "scriptName": "OnError",
+        "highlight": false,
+        "isTrigger": true,
+        "params": [
+          {
+            "id": "tag",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "transform",
+        "scriptName": "Transform",
+        "highlight": true,
+        "isAsync": true,
+        "params": [
+          {
+            "id": "tag",
+            "type": "string"
+          },
+          {
+            "id": "urlimage",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "id": "data64",
+        "expressionName": "Data64",
+        "returnType": "string"
+      }
+    ]
+  }
+}
