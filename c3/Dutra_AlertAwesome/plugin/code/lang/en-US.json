@@ -1,0 +1,239 @@
+﻿{
+  "$schema": "../../plugin.lang.schema.json",
+
+  "languageTag": "en-US",
+  "fileDescription": "Strings for Alert Awesome.",
+  "text": {
+    "plugins": {
+      "dutra_alertawesome": {
+        "name": "Alert Awesome",
+        "description": "Alert Awesome plugin for Construct 3.",
+        "help-url": "https://www.construct.net",
+        "properties": {
+          "test-property": {
+            "name": "Test property",
+            "desc": "A test number property. Displayed by 'Alert' action."
+          }
+        },
+        "aceCategories": {
+          "alert-awesome": "Alert Awesome"
+        },
+        "conditions": {
+          "is-ok-alert-awesome": {
+            "list-name": "Is OK",
+            "display-text": "Is tag [b]{0}[/b] OK",
+            "description": "Is tag OK.",
+            "params": {
+              "TAG": {
+                "name": "TAG",
+                "desc": "The tag to check."
+              }
+            }
+          },
+          "is-close-alert-awesome": {
+            "list-name": "Is Close",
+            "display-text": "Is tag [b]{0}[/b] Close",
+            "description": "Is tag OK.",
+            "params": {
+              "TAG": {
+                "name": "TAG",
+                "desc": "The tag to check."
+              }
+            }
+          },
+          "is-confirm-alert-awesome": {
+            "list-name": "Is confirm",
+            "display-text": "Is tag [b]{0}[/b] Confirm",
+            "description": "Is tag confirm.",
+            "params": {
+              "TAG": {
+                "name": "TAG",
+                "desc": "The tag to check."
+              }
+            }
+          },
+          "is-cancel-alert-awesome": {
+            "list-name": "Is cancel",
+            "display-text": "Is tag [b]{0}[/b] Cancel",
+            "description": "Is tag cancel.",
+            "params": {
+              "TAG": {
+                "name": "TAG",
+                "desc": "The tag to check."
+              }
+            }
+          },
+          "is-input-alert-awesome": {
+            "list-name": "Is input OK",
+            "display-text": "Is tag [b]{0}[/b] Input OK",
+            "description": "Is tag input OK.",
+            "params": {
+              "TAG": {
+                "name": "TAG",
+                "desc": "The tag to check."
+              }
+            }
+          }
+        },
+        "actions": {
+          "alert-awesome": {
+            "list-name": "Alert Awesome",
+            "display-text": "In tag [b]{0}[/b]. Alert for type [b]{1}[/b] with title [i]{2}[/i] and message [i]{3}[/i]. Img: [i]{4}[/i]. Button text [i]{5}[/i]. closeStyle: [i]{6}[/i]. Header: [i]{7}[/i]. bgColor: [i]{8}[/i]",
+            "description": "Alert Awesome main action.",
+            "params": {
+              "tag": {
+                "name": "Tag",
+                "desc": "The tag of the alert."
+              },
+              "type": {
+                "name": "Type",
+                "desc": "The type of alert to display.",
+                "items": {
+                  "success": "Success",
+                  "error": "Error",
+                  "info": "Info",
+                  "warning": "Warning",
+                  "dark": "Dark",
+                  "custom": "Custom"
+                }
+              },
+              "title": {
+                "name": "Title",
+                "desc": "The title of the alert."
+              },
+              "message": {
+                "name": "Message",
+                "desc": "The message of the alert."
+              },
+              "img": {
+                "name": "image",
+                "desc": "Image for alert, if header equals true."
+              },
+              "buttonOK": {
+                "name": "button",
+                "desc": "Button text."
+              },
+              "closeStyle": {
+                "name": "Close Style",
+                "desc": "The type of Close.",
+                "items": {
+                  "default": "Default",
+                  "circle": "Circle"
+                }
+              },
+              "header": {
+                "name": "header",
+                "desc": "The header alert",
+                "items": {
+                  "yes": "YES",
+                  "no": "NO"
+                }
+              },
+              "bgColor": {
+                "name": "Background Color",
+                "desc": "The background color for alert type custom."
+              }
+            }
+          },
+          "alert-confirm-awesome": {
+            "list-name": "Alert Question",
+            "display-text": "In tag [b]{0}[/b]. Alert confirm for title [i]{1}[/i] and message [i]{2}[/i]. Img: [i]{3}[/i]. Button confirm text [i]{4}[/i]. Button cancel text [i]{5}[/i]. closeStyle: [i]{6}[/i]. Header: [i]{7}[/i]",
+            "description": "Alert confirm Awesome.",
+            "params": {
+              "tag": {
+                "name": "Tag",
+                "desc": "The tag of the alert."
+              },
+              "title": {
+                "name": "Title",
+                "desc": "The title of the alert."
+              },
+              "message": {
+                "name": "Message",
+                "desc": "The message of the alert."
+              },
+              "img": {
+                "name": "image",
+                "desc": "Image for alert, if header equals true."
+              },
+              "buttonConfirm": {
+                "name": "button confirm",
+                "desc": "Button confirm text."
+              },
+              "buttonCancel": {
+                "name": "button cancel",
+                "desc": "Button cancel text."
+              },
+              "closeStyle": {
+                "name": "Close Style",
+                "desc": "The type of Close.",
+                "items": {
+                  "default": "Default",
+                  "circle": "Circle"
+                }
+              },
+              "header": {
+                "name": "header",
+                "desc": "The header alert",
+                "items": {
+                  "yes": "YES",
+                  "no": "NO"
+                }
+              }
+            }
+          },
+
+          "alert-input-awesome": {
+            "list-name": "Alert Input",
+            "display-text": "In tag [b]{0}[/b]. Alert input for title [i]{1}[/i]. Img: [i]{2}[/i]. Button text [i]{3}[/i]. closeStyle: [i]{4}[/i]. Header: [i]{5}[/i]. Placeholder: [i]{6}[/i]",
+            "description": "Alert input Awesome.",
+            "params": {
+              "tag": {
+                "name": "Tag",
+                "desc": "The tag of the alert."
+              },
+              "title": {
+                "name": "Title",
+                "desc": "The title of the alert."
+              },
+              "img": {
+                "name": "image",
+                "desc": "Image for alert, if header equals true."
+              },
+              "buttonOK": {
+                "name": "button",
+                "desc": "Button text."
+              },
+              "closeStyle": {
+                "name": "Close Style",
+                "desc": "The type of Close.",
+                "items": {
+                  "default": "Default",
+                  "circle": "Circle"
+                }
+              },
+              "header": {
+                "name": "header",
+                "desc": "The header alert",
+                "items": {
+                  "yes": "YES",
+                  "no": "NO"
+                }
+              },
+              "placeholderInput": {
+                "name": "placeholder",
+                "desc": "Placeholder for input"
+              }
+            }
+          }
+        },
+        "expressions": {
+          "input-text": {
+            "description": "Text input",
+            "translated-name": "Input Text"
+          }
+        }
+      }
+    }
+  }
+}

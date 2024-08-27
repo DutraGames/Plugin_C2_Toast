@@ -1,0 +1,217 @@
+﻿{
+  "$schema": "../aces.schema.json",
+
+  "alert-awesome": {
+    "conditions": [
+      {
+        "id": "is-ok-alert-awesome",
+        "scriptName": "IsOKAlertAwesome",
+        "highlight": true,
+        "params": [
+          {
+            "id": "TAG",
+            "type": "string"
+          }
+        ],
+        "isTrigger": true
+      },
+      {
+        "id": "is-close-alert-awesome",
+        "scriptName": "IsCloseAlertAwesome",
+        "highlight": false,
+        "params": [
+          {
+            "id": "TAG",
+            "type": "string"
+          }
+        ],
+        "isTrigger": true
+      },
+      {
+        "id": "is-confirm-alert-awesome",
+        "scriptName": "IsConfirmAlertAwesome",
+        "highlight": false,
+        "params": [
+          {
+            "id": "TAG",
+            "type": "string"
+          }
+        ],
+        "isTrigger": true
+      },
+      {
+        "id": "is-cancel-alert-awesome",
+        "scriptName": "IsCancelAlertAwesome",
+        "highlight": false,
+        "params": [
+          {
+            "id": "TAG",
+            "type": "string"
+          }
+        ],
+        "isTrigger": true
+      },
+      {
+        "id": "is-input-alert-awesome",
+        "scriptName": "IsInputAlertAwesome",
+        "highlight": false,
+        "params": [
+          {
+            "id": "TAG",
+            "type": "string"
+          }
+        ],
+        "isTrigger": true
+      }
+    ],
+    "actions": [
+      {
+        "id": "alert-awesome",
+        "scriptName": "AlertAwesome",
+        "highlight": true,
+        "isAsync": true,
+        "params": [
+          {
+            "id": "tag",
+            "type": "string"
+          },
+          {
+            "id": "type",
+            "type": "combo",
+            "items": ["success", "error", "info", "warning", "dark", "custom"],
+            "initialValue": "success"
+          },
+          {
+            "id": "title",
+            "type": "string"
+          },
+          {
+            "id": "message",
+            "type": "string"
+          },
+          {
+            "id": "img",
+            "type": "string"
+          },
+          {
+            "id": "buttonOK",
+            "type": "string",
+            "initialValue": "\"OK\""
+          },
+          {
+            "id": "closeStyle",
+            "type": "combo",
+            "items": ["default", "circle"],
+            "initialValue": "default"
+          },
+          {
+            "id": "header",
+            "type": "combo",
+            "items": ["yes", "no"],
+            "initialValue": "yes"
+          },
+          {
+            "id": "bgColor",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "id": "alert-confirm-awesome",
+        "scriptName": "AlertConfirmAwesome",
+        "highlight": false,
+        "isAsync": true,
+        "params": [
+          {
+            "id": "tag",
+            "type": "string"
+          },
+          {
+            "id": "title",
+            "type": "string"
+          },
+          {
+            "id": "message",
+            "type": "string"
+          },
+          {
+            "id": "img",
+            "type": "string"
+          },
+          {
+            "id": "buttonConfirm",
+            "type": "string",
+            "initialValue": "\"yes\""
+          },
+          {
+            "id": "buttonCancel",
+            "type": "string",
+            "initialValue": "\"no\""
+          },
+          {
+            "id": "closeStyle",
+            "type": "combo",
+            "items": ["default", "circle"],
+            "initialValue": "default"
+          },
+          {
+            "id": "header",
+            "type": "combo",
+            "items": ["yes", "no"],
+            "initialValue": "yes"
+          }
+        ]
+      },
+      {
+        "id": "alert-input-awesome",
+        "scriptName": "AlertInputAwesome",
+        "highlight": false,
+        "isAsync": true,
+        "params": [
+          {
+            "id": "tag",
+            "type": "string"
+          },
+          {
+            "id": "title",
+            "type": "string"
+          },
+          {
+            "id": "img",
+            "type": "string"
+          },
+          {
+            "id": "buttonOK",
+            "type": "string",
+            "initialValue": "\"OK\""
+          },
+          {
+            "id": "closeStyle",
+            "type": "combo",
+            "items": ["default", "circle"],
+            "initialValue": "default"
+          },
+          {
+            "id": "header",
+            "type": "combo",
+            "items": ["yes", "no"],
+            "initialValue": "yes"
+          },
+          {
+            "id": "placeholderInput",
+            "type": "string",
+            "initialValue": "\"Write something\""
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "id": "input-text",
+        "expressionName": "InputText",
+        "highlight": true,
+        "returnType": "string"
+      }
+    ]
+  }
+}
