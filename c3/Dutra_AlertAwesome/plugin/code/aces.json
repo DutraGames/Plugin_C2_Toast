@@ -213,5 +213,70 @@
         "returnType": "string"
       }
     ]
+  },
+
+  "toast": {
+    "conditions": [
+      {
+        "id": "is-tag-toast",
+        "scriptName": "IsTagToast",
+        "highlight": false,
+        "params": [
+          {
+            "id": "TAG",
+            "type": "string"
+          }
+        ],
+        "isTrigger": true
+      }
+    ],
+    "actions": [
+      {
+        "id": "toast-awesome",
+        "scriptName": "ToastAwesome",
+        "highlight": true,
+        "isAsync": true,
+        "params": [
+          {
+            "id": "tag",
+            "type": "string"
+          },
+          {
+            "id": "type",
+            "type": "combo",
+            "items": ["success", "error", "info", "warning", "dark", "custom"],
+            "initialValue": "success"
+          },
+          {
+            "id": "title",
+            "type": "string"
+          },
+          {
+            "id": "message",
+            "type": "string"
+          },
+          {
+            "id": "img",
+            "type": "string"
+          },
+          {
+            "id": "timer",
+            "type": "number",
+            "initialValue": "3000"
+          },
+          {
+            "id": "position",
+            "type": "combo",
+            "items": ["left", "right"],
+            "initialValue": "left"
+          },
+          {
+            "id": "bgColor",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "expressions": []
   }
 }

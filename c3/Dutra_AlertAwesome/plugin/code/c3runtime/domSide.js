@@ -972,6 +972,20 @@
               placeholderInput,
             }),
         ],
+        [
+          "show-toast",
+          ({ type, title, message, img, timer, bgColor, position, playSound }) =>
+          _AwesomeToast({
+              type,
+              title,
+              message,
+              img,
+              timer,
+              bgColor,
+              position,
+              playSound,
+            }),
+        ]
       ]);
     }
 
@@ -1055,6 +1069,32 @@
         value: res,
       });
     }
+
+    async _AwesomeToast({
+      type,
+      title,
+      message,
+      img,
+      timer,
+      bgColor,
+      position,
+      playSound,
+    }){
+      const res = await awesomeToast({
+        type,
+        title,
+        message,
+        img,
+        timer,
+        bgColor,
+        position,
+        playSound,
+      });
+      this.PostToRuntime("on-awesome-toast", res);
+    }
+    
+
+
   };
 
   globalThis.RuntimeInterface.AddDOMHandlerClass(HANDLER_CLASS);

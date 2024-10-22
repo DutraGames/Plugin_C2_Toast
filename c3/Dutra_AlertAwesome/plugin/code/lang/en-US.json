@@ -16,7 +16,8 @@
           }
         },
         "aceCategories": {
-          "alert-awesome": "Alert Awesome"
+          "alert-awesome": "Alert Awesome",
+          "toast": "Toast"
         },
         "conditions": {
           "is-ok-alert-awesome": {
@@ -67,6 +68,17 @@
             "list-name": "Is input OK",
             "display-text": "Is tag [b]{0}[/b] Input OK",
             "description": "Is tag input OK.",
+            "params": {
+              "TAG": {
+                "name": "TAG",
+                "desc": "The tag to check."
+              }
+            }
+          },
+          "is-tag-toast": {
+            "list-name": "Is Toast",
+            "display-text": "Is tag [b]{0}[/b] Toast",
+            "description": "Is tag Toast.",
             "params": {
               "TAG": {
                 "name": "TAG",
@@ -182,7 +194,6 @@
               }
             }
           },
-
           "alert-input-awesome": {
             "list-name": "Alert Input",
             "display-text": "In tag [b]{0}[/b]. Alert input for title [i]{1}[/i]. Img: [i]{2}[/i]. Button text [i]{3}[/i]. closeStyle: [i]{4}[/i]. Header: [i]{5}[/i]. Placeholder: [i]{6}[/i]",
@@ -223,6 +234,61 @@
               "placeholderInput": {
                 "name": "placeholder",
                 "desc": "Placeholder for input"
+              }
+            }
+          },
+          "toast-awesome": {
+            "list-name": "Toast",
+            "display-text": "In tag [b]{0}[/b]. Toast for type [b]{1}[/b] with title [i]{2}[/i] and message [i]{3}[/i]. Img: [i]{4}[/i]. Position: [i]{5}[/i]. Timer: [i]{6}[/i] ms. bgColor: [i]{7}[/i]",
+            "description": "Toast Awesome.",
+            "params": {
+              "tag": {
+                "name": "Tag",
+                "desc": "The tag of the alert."
+              },
+              "type": {
+                "name": "Type",
+                "desc": "The type of toast to display.",
+                "items": {
+                  "success": "Success",
+                  "error": "Error",
+                  "info": "Info",
+                  "warning": "Warning",
+                  "dark": "Dark",
+                  "custom": "Custom"
+                }
+              },
+              "title": {
+                "name": "Title",
+                "desc": "The title of the toast."
+              },
+              "message": {
+                "name": "Message",
+                "desc": "The message of the alert."
+              },
+              "img": {
+                "name": "image",
+                "desc": "Image for toast. Optional."
+              },
+              "timer": {
+                "name": "timer",
+                "desc": "Timer for toast in milliseconds."
+              },
+              "position": {
+                "name": "position",
+                "desc": "Position for toast.",
+                "items": {
+                  "left": "Left",
+                  "right": "Right"
+                }
+              },
+              "bgColor": {
+                "name": "background color",
+                "desc": "Background color for toast. If type is custom."
+              },
+              "playSound": {
+                "name": "play sound",
+                "desc": "Play sound. Optional."
               }
             }
           }

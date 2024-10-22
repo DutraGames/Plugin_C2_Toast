@@ -151,5 +151,31 @@ C3.Plugins.Dutra_AlertAwesome.Instance = class SingleGlobalInstance extends (
     }
   }
 
+  async showToastAwesome(
+    type,
+    title,
+    message,
+    img,
+    timer,
+    position,
+    bgColor,
+    playSound
+  ) {
+    try {
+      const result = await this._postToDOM("show-awesome-toast", {
+        type,
+        title,
+        message,
+        img,
+        timer,
+        position,
+        bgColor,
+        playSound,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   ///////////////////////////////////////////////////////////////
 };

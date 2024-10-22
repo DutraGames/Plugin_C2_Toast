@@ -91,4 +91,35 @@ C3.Plugins.Dutra_AlertAwesome.Acts = {
       placeholderInput
     );
   },
+
+  async ToastAwesome(
+    tag,
+    typeindex,
+    title,
+    message,
+    img,
+    timer,
+    bgColor,
+    positionIndex,
+    playSound
+  ) {
+    this.TAG = tag;
+
+    const type = ["success", "error", "info", "warning", "dark", "custom"][
+      typeindex
+    ];
+
+    const position = ["left", "right"][positionIndex];
+
+    await this.showToastAwesome(
+      type,
+      title,
+      message,
+      img,
+      timer,
+      position,
+      bgColor,
+      playSound
+    );
+  },
 };

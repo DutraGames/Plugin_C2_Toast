@@ -18,4 +18,8 @@ C3.Plugins.Dutra_AlertAwesome.Cnds = {
   IsInputAlertAwesome(tag) {
     return tag === this.TAG ? true : false;
   },
+
+  IsTagToast(tag) {
+    return tag === this.TAG ? true : false;
+  },
 };
