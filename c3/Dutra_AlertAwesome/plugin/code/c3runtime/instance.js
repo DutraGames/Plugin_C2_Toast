@@ -22,6 +22,7 @@ C3.Plugins.Dutra_AlertAwesome.Instance = class SingleGlobalInstance extends (
 
     this._addDOMMessageHandlers([
       ["on-awesome-alert", (text) => this.onAwesomeAlert(text)],
+      ["on-toast", (text) => this.onToast(text)],
     ]);
   }
 
@@ -174,6 +175,12 @@ C3.Plugins.Dutra_AlertAwesome.Instance = class SingleGlobalInstance extends (
       });
     } catch (error) {
       console.log(error);
+    }
+  }
+
+  onToast(text) {
+    if (text === "Close") {
+      this._trigger(C3.Plugins.Dutra_AlertAwesome.Cnds.IsTagToast);
     }
   }
 
