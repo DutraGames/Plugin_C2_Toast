@@ -757,6 +757,19 @@
         </div>
         `;
 
+      if (img === "") {
+        let templateToast = `
+            <div class="toast-frame ${type}-bg" style="animation: Toast-${position} 1s ease-in;" id="${toastId}-toast-frame">
+                <div class="toast-content">
+                    <span class="toast-title">${title}</span>
+                    <span class="toast-message">${message}</span>
+                </div>
+                
+                <span class="toast-close" id="${toastId}-toast-close">X</span>
+            </div>
+            `;
+      }
+
       // Customizable gift template
       if (type === "custom") {
         templateToast = `
@@ -974,8 +987,17 @@
         ],
         [
           "show-toast",
-          ({ type, title, message, img, timer, bgColor, position, playSound }) =>
-          _AwesomeToast({
+          ({
+            type,
+            title,
+            message,
+            img,
+            timer,
+            bgColor,
+            position,
+            playSound,
+          }) =>
+            _AwesomeToast({
               type,
               title,
               message,
@@ -985,7 +1007,7 @@
               position,
               playSound,
             }),
-        ]
+        ],
       ]);
     }
 
@@ -1079,7 +1101,7 @@
       bgColor,
       position,
       playSound,
-    }){
+    }) {
       const res = await awesomeToast({
         type,
         title,
@@ -1092,9 +1114,6 @@
       });
       this.PostToRuntime("on-awesome-toast", res);
     }
-    
-
-
   };
 
   globalThis.RuntimeInterface.AddDOMHandlerClass(HANDLER_CLASS);
