@@ -162,7 +162,7 @@ C3.Plugins.Dutra_AlertAwesome.Instance = class SingleGlobalInstance extends (
     playSound
   ) {
     try {
-      const result = await this._postToDOM("show-awesome-toast", {
+      const result = await this._postToDOM("show-toast", {
         type,
         title,
         message,

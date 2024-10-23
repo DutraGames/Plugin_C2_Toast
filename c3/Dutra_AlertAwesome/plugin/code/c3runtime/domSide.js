@@ -997,7 +997,7 @@
             position,
             playSound,
           }) =>
-            _AwesomeToast({
+            this._AwesomeToast({
               type,
               title,
               message,
