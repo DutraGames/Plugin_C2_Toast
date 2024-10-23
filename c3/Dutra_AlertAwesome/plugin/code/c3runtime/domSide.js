@@ -758,7 +758,7 @@
         `;
 
       if (img === "") {
-        let templateToast = `
+        templateToast = `
             <div class="toast-frame ${type}-bg" style="animation: Toast-${position} 1s ease-in;" id="${toastId}-toast-frame">
                 <div class="toast-content">
                     <span class="toast-title">${title}</span>
@@ -782,6 +782,18 @@
                 <span class="toast-close" id="${toastId}-toast-close">X</span>
             </div>
             `;
+
+        if (img === "") {
+          templateToast = `
+          <div class="toast-frame bg-global" id="${toastId}-toast-frame">
+              <div class="toast-content">
+              <span class="toast-title">${title}</span>
+              <span class="toast-message">${message}</span>
+              </div>
+              <span class="toast-close" id="${toastId}-toast-close">X</span>
+          </div>
+          `;
+        }
       }
 
       // All toasts
