@@ -818,7 +818,7 @@
       const ToastClose = document.querySelector(`#${toastId}-toast-close`);
       ToastClose.addEventListener("click", () => {
         ToastFrame.remove();
-        resolve("close");
+        resolve("Close");
       });
 
       // Background color application
@@ -1124,7 +1124,10 @@
         position,
         playSound,
       });
-      this.PostToRuntime("on-awesome-toast", res);
+      this.PostToRuntime("on-awesome-toast", {
+        type: "Toast",
+        value: res,
+      });
     }
   };
 
